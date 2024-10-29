@@ -632,13 +632,62 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
     /* height: fit-content; */
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 575px) {
     .prev, .next {
-        display: none !important;    
+        display: none !important;
+    }
+
+    .index-portfolio .prev, .index-portfolio .next {
+        /* display: none !important;     */
+        position: absolute;
+    }
+    .index-portfolio .prev {
+        left: 35%;
+        bottom: 71px;
+        height: 72px;
+        font-size: 4rem;
+        line-height: 1em;
+        width: 72px;
+        border: none;
+        background-color: transparent;
+    }
+    .index-portfolio .next {
+        right: 35%;
+        bottom: 71px;
+        height: 72px;
+        font-size: 4rem;
+        line-height: 1em;
+        width: 72px;
+        border: none;
+        background-color: transparent;
     }
     .slick-list {
         width: 100%;
     }
+}
+
+.other-project {
+    position: absolute;
+    bottom: 90px;
+    z-index: 100;
+}
+
+.show-small .other-project {
+    position: fixed;
+    bottom: 35px;
+    background-color: white;
+    border: black 1px solid;
+    height: 36px !important;
+}
+
+@media only screen and (max-width: 599px) {
+    .show-small .other-project {
+        bottom: 71px;
+    }
+}
+
+.fino {
+    font-weight: 100;
 }
 
 .titulo-container {
@@ -820,9 +869,9 @@ a img {
     position: relative;
 }
 
-.show-small .priority {
+/* .show-small .priority {
     z-index: 30;
-}
+} */
 
 .info {
     height: 100vh;
@@ -837,7 +886,7 @@ a img {
 .show-small .info {
     /* border-bottom: 1px solid black; */
     background-color: white;
-    z-index: 20;
+    /* z-index: 20; */
     height: fit-content;
 }
 
@@ -1064,8 +1113,9 @@ header:hover .carousel-header-short {
         position: unset;
         /* margin-top: 5.2rem; */
         height: 90%;
-        margin-bottom: 7.2rem;
+        margin-bottom: 10rem;
     }
+
 
     .roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .playtime .slide-track {
         /* height: fit-content; */
