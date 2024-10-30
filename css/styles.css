@@ -90,10 +90,9 @@ header p {
 .rgb {
     font-family: dindong;
     font-size: 2rem;
-    line-height: 0.73em !important;
-    /* padding-top: 0.17em !important; */
-    margin-top: 0.17em;
-    padding-bottom: 0.17em !important;
+    line-height: 24px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
     display: flex;
     gap: 0.3em;
     transition: 0.5s;
