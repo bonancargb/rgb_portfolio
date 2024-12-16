@@ -631,6 +631,10 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
     /* height: fit-content; */
 }
 
+.project-carousel .slick-list {
+    width: 100vw;
+}
+
 @media only screen and (max-width: 575px) {
     .prev, .next {
         display: none !important;
@@ -668,7 +672,7 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
 .other-project {
     position: absolute;
     bottom: 90px;
-    z-index: 100;
+    z-index: 1000000;
 }
 
 .show-small .other-project {
@@ -940,16 +944,23 @@ a img {
 
 }
 
-.roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .playtime .slide-track {
+.roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .eter .slick-track, .aniversario_punch .slick-track, .aniversario_atomico .slick-track {
     display: flex !important;
     align-items: center !important;
     height: calc(100vh - 96px);
     /* height: fit-content; */
 }
 
-.roterdao .slick-list, .cereais .slick-list, .ara .slick-list, .medusa .slick-list, .playtime .slide-list {
+/* .eter .slick-track  {
+    display: flex;
+    align-items: center;
+    height: 100%;
+} */
+
+.roterdao .slick-list, .cereais .slick-list, .ara .slick-list, .medusa .slick-list, .eter .slick-list, .aniversario_punch .slick-list, .aniversario_atomico .slick-list {
     top: 3rem;
 }
+
 
 .too-much-text {
     height: calc(100vh - 10em);
@@ -1006,6 +1017,11 @@ header:hover .carousel-header-short {
 
 .project-carousel-container {
     transition: 0.5s;
+    justify-content: center;
+}
+
+.project-carousel {
+    justify-content: center;
 }
 
 .video-carousel .titulo, .project-carousel .titulo {
@@ -1087,7 +1103,7 @@ header:hover .carousel-header-short {
     height: 1em !important;
 }
 
-.a-project .slick-dotted.slick-slider{
+.a-project .slick-dotted.slick- r{
     margin-bottom: 0px !important;
 }
 
@@ -1116,12 +1132,12 @@ header:hover .carousel-header-short {
     }
 
 
-    .roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .playtime .slide-track {
+    .roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .eter .slick-track, .aniversario_punch .slick-track, .aniversario_atomico .slick-track {
         /* height: fit-content; */
         max-height: 100vh;
         margin-bottom: 7rem;
     }
-    .roterdao .slick-list, .cereais .slick-list, .ara .slick-list, .medusa .slick-list, .playtime .slide-list {
+    .roterdao .slick-list, .cereais .slick-list, .ara .slick-list, .medusa .slick-list, .eter .slick-list, .aniversario_punch .slick-list, .aniversario_atomico .slick-list {
         top: 0;
     }
     .too-much-text {

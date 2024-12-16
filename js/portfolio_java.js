@@ -102,11 +102,11 @@ const nextIconProject = '<button type="button" class="next col-2"><p class="mb-0
     //   centerMode: true,
     //   centerPadding: 'calc(50% - 600px)',
       dots: true,
-      // arrows: true,
+      arrows: false,
     //   appendArrows: ".button.carousel", 
       // appendDots: ".dot-container",
-      prevArrow: prevIconProject,
-      nextArrow: nextIconProject,
+      // prevArrow: prevIconProject,
+      // nextArrow: nextIconProject,
     });
   });
 
@@ -121,11 +121,11 @@ const nextIconProject = '<button type="button" class="next col-2"><p class="mb-0
     //   centerMode: true,
     //   centerPadding: 'calc(50% - 600px)',
       dots: true,
-      // arrows: true,
+      arrows: false,
     //   appendArrows: ".button.carousel", 
       // appendDots: ".dot-container",
-      prevArrow: prevIconProject,
-      nextArrow: nextIconProject,
+      // prevArrow: prevIconProject,
+      // nextArrow: nextIconProject,
     });
   });
 
