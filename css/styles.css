@@ -15,12 +15,12 @@
 
 body {
     font-family: Space Grotesk;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 @media only screen and (max-width: 1199px) {
     body {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 }  
 
@@ -426,7 +426,7 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
     width: 100vw;
     height: calc(100vh - 87px);
     position: absolute;
-    top: 48px;
+    top: 40px;
     right: -1px;
     padding-right: 28px;
     padding-bottom: 43.5px;
@@ -452,6 +452,12 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
     letter-spacing: -0.05em;
     top: 0;
     bottom: 0;
+}
+
+@media only screen and (max-width: 799px) {
+    .index-carousel .titulo {
+        font-size: 4rem;
+    }
 }
 
 @media only screen and (max-width: 699px) {
@@ -636,33 +642,29 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
 }
 
 @media only screen and (max-width: 575px) {
-    .prev, .next {
-        display: none !important;
-    }
-
     .index-portfolio .prev, .index-portfolio .next {
         /* display: none !important;     */
         position: absolute;
     }
     .index-portfolio .prev {
-        left: 35%;
+        left: 0;
         bottom: 71px;
         height: 72px;
-        font-size: 4rem;
-        line-height: 1em;
+        font-size: 6rem;
+        line-height: 0em;
         width: 72px;
-        border: none;
-        background-color: transparent;
+        /* border: none; */
+        background-color: white;
     }
     .index-portfolio .next {
-        right: 35%;
+        right: 0;
         bottom: 71px;
         height: 72px;
-        font-size: 4rem;
-        line-height: 1em;
+        font-size: 6rem;
+        line-height: 0em;
         width: 72px;
-        border: none;
-        background-color: transparent;
+        /* border: none; */
+        background-color: white;
     }
     .slick-list {
         width: 100%;
@@ -670,18 +672,25 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
 }
 
 .other-project {
-    position: absolute;
-    bottom: 90px;
+    /* position: absolute;
+    bottom: 90px; */
     z-index: 1000000;
-}
-
-.show-small .other-project {
+    /* display: inline-grid !important; */
+    align-items: center;
     position: fixed;
     bottom: 35px;
     background-color: white;
     border: black 1px solid;
     height: 36px !important;
 }
+
+/* .show-small .other-project {
+    position: fixed;
+    bottom: 35px;
+    background-color: white;
+    border: black 1px solid;
+    height: 36px !important;
+} */
 
 @media only screen and (max-width: 599px) {
     .show-small .other-project {
@@ -736,7 +745,8 @@ footer {
 }
 
 .ajuste {
-    margin-top: 0.09em
+    margin-top: 0.09em;
+    position: relative;
 }
 
 .footer-mobile .container-carousel {
@@ -758,6 +768,17 @@ footer {
     .footer-mobile {
         display: none;
     }
+}
+
+.h-link {
+    position: absolute;
+    height: 10px;
+}
+
+.arrow-link {
+    padding-left: 8px;
+    padding-top: 4px;
+    font-weight: 100;
 }
 
 /* previous work */
@@ -791,7 +812,7 @@ footer {
     url("../images/capa_ines.png");
 } */
 
-a img {
+.previous_work a img {
     width: 120%;
     filter: sepia(100%);
     opacity: 0;
@@ -877,13 +898,20 @@ a img {
 } */
 
 .info {
-    height: 100vh;
-    display: flex;
+    height: calc(100vh - 105px);
+    margin-top: 35px;
+    overflow-y: scroll;
+    /* display: flex; */
     /* align-items: center; */
+    /* padding-top: 20rem; */
+}
+
+.about_me .info {
+    height: calc(100vh - 70px);
 }
 
 .show-large .info {
-    align-items: center;
+    /* align-items: center; */
 }
 
 .show-small .info {
@@ -892,18 +920,20 @@ a img {
     /* z-index: 20; */
     height: fit-content;
 }
-
+/* 
 .about_me .info {
-    height: 100vh;
-}
+    height: calc(100vh - 68px);
+    margin-top: 34px;
+} */
 
 .about_me .show-small .info {
     height: fit-content;
 }
 
 .copy {
-    padding-top: 116px;
-    padding-bottom: 68px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    height: fit-content;
 }
 
 .contact_me .show-small .copy {
@@ -944,7 +974,7 @@ a img {
 
 }
 
-.roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .eter .slick-track, .aniversario_punch .slick-track, .aniversario_atomico .slick-track {
+.seixal_terno .slick-track, .ineur .slick-track, .sel .slick-track, .roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .eter .slick-track, .aniversario_punch .slick-track, .aniversario_atomico .slick-track {
     display: flex !important;
     align-items: center !important;
     height: calc(100vh - 96px);
@@ -957,15 +987,15 @@ a img {
     height: 100%;
 } */
 
-.roterdao .slick-list, .cereais .slick-list, .ara .slick-list, .medusa .slick-list, .eter .slick-list, .aniversario_punch .slick-list, .aniversario_atomico .slick-list {
+.seixal_terno .slick-list, .ineur .slick-list, .sel .slick-list, .roterdao .slick-list, .cereais .slick-list, .ara .slick-list, .medusa .slick-list, .eter .slick-list, .aniversario_punch .slick-list, .aniversario_atomico .slick-list {
     top: 3rem;
 }
 
 
-.too-much-text {
+/* .too-much-text {
     height: calc(100vh - 10em);
     overflow-y: scroll;
-}
+} */
 
 /* .show-small .too-much-text {
     height: fit-content;
@@ -975,13 +1005,14 @@ a img {
 /* width */
 .too-much-text::-webkit-scrollbar {
   width: 0.5em;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 /* Track */
 .too-much-text::-webkit-scrollbar-track {
-  border: 1px solid black;
-  border-radius: 5em;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  /* border-radius: 5em; */
 }
  
 /* Handle */
@@ -990,10 +1021,26 @@ a img {
   border-radius: 5em;
 }
 
-/* Handle on hover
+.blue-element .too-much-text::-webkit-scrollbar-thumb {
+    background: blue;
+}
+
+.green-element .too-much-text::-webkit-scrollbar-thumb {
+    background: green;
+}
+
+/* Handle on hover */
 .too-much-text::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
-} */
+} 
+
+.blue-element .too-much-text::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 0, 160); 
+} 
+
+.green-element .too-much-text::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 77, 0); 
+} 
 
 .carousel-header-short {
     white-space: nowrap;
@@ -1131,13 +1178,17 @@ header:hover .carousel-header-short {
         margin-bottom: 10rem;
     }
 
+    .about_me .subject {
+        margin-bottom: 35px;
+    }
 
-    .roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .eter .slick-track, .aniversario_punch .slick-track, .aniversario_atomico .slick-track {
+
+    .seixal_terno .slick-track, .ineur .slick-track, .sel .slick-track, .roterdao .slick-track, .cereais .slick-track, .ara .slick-track, .medusa .slick-track, .eter .slick-track, .aniversario_punch .slick-track, .aniversario_atomico .slick-track {
         /* height: fit-content; */
         max-height: 100vh;
         margin-bottom: 7rem;
     }
-    .roterdao .slick-list, .cereais .slick-list, .ara .slick-list, .medusa .slick-list, .eter .slick-list, .aniversario_punch .slick-list, .aniversario_atomico .slick-list {
+    .seixal_terno .slick-list, .ineur .slick-list, .sel .slick-list, .roterdao .slick-list, .cereais .slick-list, .ara .slick-list, .medusa .slick-list, .eter .slick-list, .aniversario_punch .slick-list, .aniversario_atomico .slick-list {
         top: 0;
     }
     .too-much-text {
@@ -1149,7 +1200,7 @@ header:hover .carousel-header-short {
         margin-top: 2em;
     }
 
-    .roterdao .slide img, .cereais .slide img, .ara .slide img, .medusa .slide img, .playtime .slide img {
+    .seixal_terno .slide img, .ineur .slide img, .sel .slide img, .roterdao .slide img, .cereais .slide img, .ara .slide img, .medusa .slide img, .playtime .slide img {
         max-height: 85%;
     }
     .a-project .slick-dots {
@@ -1164,13 +1215,19 @@ header:hover .carousel-header-short {
     }
 }
 
+@media only screen and (max-width: 599px) {
+    .about_me .subject {
+        margin-bottom: 72px !important;
+    }
+}
+
 .thats-me {
     max-height: 80%;
 }
 
 .show-small .thats-me {
     min-width: 100vw;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     object-fit: cover;
 }
 
