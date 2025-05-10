@@ -1018,7 +1018,7 @@ footer {
 /* Handle */
 .too-much-text::-webkit-scrollbar-thumb {
   background: red; 
-  border-radius: 5em;
+  /* border-radius: 5em; */
 }
 
 .blue-element .too-much-text::-webkit-scrollbar-thumb {
