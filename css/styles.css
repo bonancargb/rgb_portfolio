@@ -1091,7 +1091,7 @@ header:hover .carousel-header-short {
     align-items: center;
 }
 
-.a-project .slide img {
+.a-project .slide img, .a-project .slide video {
     max-height: 65%;
 }
 
