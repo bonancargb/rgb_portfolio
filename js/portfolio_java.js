@@ -47,40 +47,52 @@ $(document).ready(function() {
       });
       $(".tags-eventos .dropdown-menu .tag-1").click(function () {
           // alert("clique");
-          $(".design, .music, .copywriting, .tag-1").addClass("invisivel");
-          $(".web-design, .todos, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6").removeClass("invisivel");
-          $(".mudar p").text("Web design");
+          $(".brand, .editorial, .packaging, .social_media, .copywriting, .photography .tag-1").addClass("invisivel");
+          $(".web, .todos, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-7, .tag-8").removeClass("invisivel");
+          $(".mudar p").text("Web");
       });
       $(".tags-eventos .dropdown-menu .tag-2").click(function () {
           // alert("clique");
-          $(".web-design, .music, .copywriting, .experiment, .tag-2").addClass("invisivel");
-          $(".design, .todos, .tag-1, .tag-3, .tag-4, .tag-5").removeClass("invisivel");
-          $(".mudar p").text("Design");
+          $(".web, .editorial, .packaging, .social_media, .copywriting, .photography, .tag-2").addClass("invisivel");
+          $(".brand, .todos, .tag-1, .tag-3, .tag-4, .tag-5, .tag-6, tag-7, tag-8").removeClass("invisivel");
+          $(".mudar p").text("Brand");
           
       });
       $(".tags-eventos .dropdown-menu .tag-3").click(function () {
           // alert("clique");
-          $(".web-design, .design, .copywriting, .experiment, .tag-3").addClass("invisivel");
-          $(".music, .todos, .tag-1, .tag-2, .tag-4, .tag-5").removeClass("invisivel");
-          $(".mudar p").text("Music");
+          $(".web, .brand, .packaging, .social_media, .copywriting, .photography, .tag-3").addClass("invisivel");
+          $(".editorial, .todos, .tag-1, .tag-2, .tag-4, .tag-5, .tag-6, .tag-7, .tag-8").removeClass("invisivel");
+          $(".mudar p").text("Editorial");
       });
       $(".tags-eventos .dropdown-menu .tag-4").click(function () {
           // alert("clique");
-          $(".web-design, .design, .music, .experiment, .tag-4").addClass("invisivel");
-          $(".copywriting, .todos, .tag-1, .tag-2, .tag-3, .tag-5").removeClass("invisivel");
-          $(".mudar p").text("Copywriting");
+          $(".web, .brand, .editorial, .social_media, .copywriting, .photography, .tag-4").addClass("invisivel");
+          $(".packaging, .todos, .tag-1, .tag-2, .tag-3, .tag-5, .tag-6, .tag-7, .tag-8").removeClass("invisivel");
+          $(".mudar p").text("Packaging");
       });
       $(".tags-eventos .dropdown-menu .tag-5").click(function () {
         // alert("clique");
-        $(".web-design, .design, .music, .copywriting, .tag-4").addClass("invisivel");
-        $(".experiment, .todos, .tag-1, .tag-2, .tag-3, .tag-5").removeClass("invisivel");
-        $(".mudar p").text("Experiment");
+        $(".web, .brand, .editorial, .packaging, .copywriting, .photography, .tag-4").addClass("invisivel");
+        $(".social_media, .todos, .tag-1, .tag-2, .tag-3, .tag-4 .tag-6, .tag-7, .tag-8").removeClass("invisivel");
+        $(".mudar p").text("Social Media");
     });
       $(".tags-eventos .dropdown-menu .tag-6").click(function () {
+        // alert("clique");
+        $(".web, .brand, .editorial, .packaging, .social_media, .photography, .tag-4").addClass("invisivel");
+        $(".copywriting, .todos, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-7, .tag-8").removeClass("invisivel");
+        $(".mudar p").text("Copywriting");
+    });
+      $(".tags-eventos .dropdown-menu .tag-7").click(function () {
+        // alert("clique");
+        $(".web, .brand, .editorial, .packaging, .social_media, .copywriting, .tag-4").addClass("invisivel");
+        $(".photography, .todos, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-8").removeClass("invisivel");
+        $(".mudar p").text("Photography");
+    });
+      $(".tags-eventos .dropdown-menu .tag-8").click(function () {
           // alert("clique");
-          $(".todos, .tag-5").addClass("invisivel");
-          $(".web-design, .design, .music, .copywriting, .experiment, .tag-1, .tag-2, .tag-3, .tag-4").removeClass("invisivel");
-          $(".mudar p").text("Surprise me");
+          $(".todos, .tag-8").addClass("invisivel");
+          $(".web, .brand, .editorial, .packaging, .social_media, .copywriting, .photography, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-7").removeClass("invisivel");
+          $(".mudar p").text("Show All");
       });
   });
 
