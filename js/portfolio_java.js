@@ -1,5 +1,5 @@
-const prevIcon = '<button type="button" class="prev col-2"><p class="mb-0"><</p></button>';
-const nextIcon = '<button type="button" class="next col-2"><p class="mb-0">></p></button>';
+const prevIcon = '<button type="button" class="prev col-2 fade-in"><p class="mb-0"><</p></button>';
+const nextIcon = '<button type="button" class="next col-2 fade-in"><p class="mb-0">></p></button>';
 
 
 $(document).ready(function() {
@@ -149,3 +149,9 @@ const nextIconProject = '<button type="button" class="next col-2"><p class="mb-0
       $(".expand").toggleClass("expanded");
     })
   })
+
+  $(document).ready(function() {
+    $('.fade-in').addClass('visible');
+  });
+
+  

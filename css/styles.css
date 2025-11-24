@@ -13,6 +13,17 @@
     src: url(../type/Anybody-Italic-VariableFont_wdth\,wght.ttf);
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 body {
     font-family: Space Grotesk;
     font-size: 1.3rem;
@@ -800,11 +811,94 @@ footer {
     color: black;
 }
 
-.red, .green, .blue {
+.projects p {
+    margin-bottom: 0;
+}
+
+/* .red, .green, .blue {
     border-radius: 5em;
     height: 1.5em;
     object-fit: cover;
     overflow: hidden;
+} */
+
+/* Container for border and image */
+.projects a .red,
+.projects a .green,
+.projects a .blue {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 1.5em;
+    width: 8em;
+    border-radius: 2em;
+    border: 4px solid transparent;
+    background: transparent;
+    transition: all 0.5s;
+    box-sizing: border-box;
+    z-index: 2; /* Make sure this is above other content */
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; /* Ensure border is visible */
+}
+
+/* Show border on hover */
+.projects a:hover .red {
+    border-color: red;
+    opacity: 1;
+    height: 65%;
+    width: 18em;
+    border-width: 3px;
+    box-shadow: 0 4px 24px rgba(255,0,0,0.08);
+    pointer-events: auto;
+}
+
+.projects a:hover .green {
+    border-color: green;
+    opacity: 1;
+    height: 65%;
+    width: 18em;
+    border-width: 3px;
+    box-shadow: 0 4px 24px rgba(0,128,0,0.08);
+    pointer-events: auto;
+}
+
+.projects a:hover .blue {
+    border-color: blue;
+    opacity: 1;
+    height: 65%;
+    width: 18em;
+    border-width: 3px;
+    box-shadow: 0 4px 24px rgba(0,0,255,0.08);
+    pointer-events: auto;
+}
+
+/* Image inside colored container */
+.projects a .red img,
+.projects a .green img,
+.projects a .blue img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+    opacity: 1;
+    filter: none;
+    border-radius: 1.8em;
+    z-index: 1; /* Lower than border */
+    pointer-events: none; /* Prevent image from blocking border */
+    position: relative;
+}
+
+/* Remove image fade on hover */
+.projects a:hover .red img,
+.projects a:hover .green img,
+.projects a:hover .blue img {
+    opacity: 1;
+    filter: none;
 }
 
 /* .red {
@@ -812,16 +906,15 @@ footer {
     url("../images/capa_ines.png");
 } */
 
-.previous_work a img {
+/* .previous_work a img {
     width: 120%;
     filter: sepia(100%);
     opacity: 0;
-    /* background-image: url("../images/capa_ines.png"); */
     animation-name: float;
     animation-duration: 40s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.22, 0, 0.78, 1.0);
-}
+} */
 
 .projects a:hover img {
     opacity: 0.5; 
@@ -839,7 +932,7 @@ footer {
     }
 }
 
-.projects .row:hover .red {
+/* .projects .row:hover .red {
     opacity: 1;
     background-color: rgba(255, 0, 0);
 }
@@ -852,7 +945,7 @@ footer {
 .projects .row:hover .blue {
     opacity: 1;
     background-color: blue;
-}
+} */
 
 .web-design p, .design p, .music p, .copywriting p, .experiment p {
     margin-bottom: 0;
