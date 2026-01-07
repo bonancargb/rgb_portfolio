@@ -7,7 +7,7 @@ $(document).ready(function() {
       centerMode:true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 6000,
       infinite:true,
     //   centerMode: true,
@@ -153,5 +153,7 @@ const nextIconProject = '<button type="button" class="next col-2"><p class="mb-0
   $(document).ready(function() {
     $('.fade-in').addClass('visible');
   });
+
+  
 
   

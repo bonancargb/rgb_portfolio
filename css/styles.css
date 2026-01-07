@@ -15,13 +15,13 @@
 
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
+    /* transform: translateY(30px); */
     transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
+    /* transform: translateY(0); */
 }
 
 
@@ -507,44 +507,77 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
     height: 80%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background-color: red;
+    /* image layer */
+    background-image: var(--bg-image, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     display: flex;
+    align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: black;
+    text-decoration: none;
     transition: all 0.5s;
     z-index: 1;
-    position: relative;
-    color: white;
-    text-decoration: none;
 }
 
-@media only screen and (max-width: 991px) {
-    .big-red {
-        height: auto;
-        width: 100%;
-    }
-}
+/* register animatable custom props (Safari 15.4+) */
+@property --ring-inner { syntax: '<percentage>'; inherits: false; initial-value: 42%; }
+@property --ring-outer { syntax: '<percentage>'; inherits: false; initial-value: 70%; }
 
-.big-red:hover p {
-    color: black;
+/* big-red: image as base, ring in ::before */
+.big-red {
+  height: 80%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-image: var(--bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: black;
+  text-decoration: none;
+  transition: all 0.5s;
+  z-index: 1;
+
+  /* ring settings */
+  /* --ring-inner: 52%;
+  --ring-outer: 78%; */
+  --ring-rgb: 255, 0, 0; /* red; override per color if needed */
 }
+.big-red > * { position: relative; z-index: 1; }
 
 .big-red::before {
-    position: absolute;
-    border-radius: 50%;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: radial-gradient(white, rgb(255, 119, 119) 70%, red);
-    z-index: -1;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  /* transparent center -> soft red band -> transparent outside */
+  background-image: radial-gradient(circle at 50% 50%,
+    rgba(var(--ring-rgb), 0) var(--ring-inner),
+    rgba(var(--ring-rgb), 0.1) calc(var(--ring-inner) + 4%),
+    /* rgba(var(--ring-rgb), 0.75) calc(var(--ring-outer) - 0%), */
+    rgba(var(--ring-rgb), 1) var(--ring-outer)
+  );
+  transition: --ring-inner 400ms ease, --ring-outer 400ms ease;
 }
 
 .big-red:hover::before {
-    opacity: 1;
+  /* shrink band to a thin border */
+  --ring-inner: 64.5%;
+  --ring-outer: 69%;
+  
 }
+
+
 
 .big-green {
     height: 80%;
@@ -724,7 +757,7 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
     list-style: none;
     font-weight: lighter;
     position: absolute;
-    margin-top: 56%;
+    margin-top: 25%;
 }
 
 @media only screen and (max-width: 499px) {
@@ -1137,6 +1170,8 @@ footer {
   background: rgb(0, 77, 0); 
 } 
 
+
+
 .carousel-header-short {
     white-space: nowrap;
     animation: scroll-horizontal-short 8s linear infinite;
@@ -1195,6 +1230,10 @@ header:hover .carousel-header-short {
         max-height: 100%;   
     }
 } */
+
+.slide-description {
+    font-size: 1rem;
+}
 
 .a-project .prev, .a-project .next {
     border: transparent;
