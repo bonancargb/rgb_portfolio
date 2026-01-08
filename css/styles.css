@@ -528,6 +528,10 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
 @property --ring-inner { syntax: '<percentage>'; inherits: false; initial-value: 42%; }
 @property --ring-outer { syntax: '<percentage>'; inherits: false; initial-value: 70%; }
 
+:root { --circle-size: min(80vmin, 66%); }
+
+.index-portfolio .slide { position: relative; display: flex !important; justify-content: center; align-items: center; }
+
 /* big-red: image as base, ring in ::before */
 .big-red {
   height: 80%;
@@ -542,7 +546,7 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  color: black;
+  color: white;
   text-decoration: none;
   transition: all 0.5s;
   z-index: 1;
@@ -552,7 +556,22 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
   --ring-outer: 78%; */
   --ring-rgb: 255, 0, 0; /* red; override per color if needed */
 }
-.big-red > * { position: relative; z-index: 1; }
+.big-red > img.bg-image {
+    position: absolute;
+    inset: 0;               /* fill parent */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit; /* keep the circle */
+    filter: grayscale(100%);
+    z-index: 0;
+    transition: transform 400ms ease; /* enable smooth zoom */
+    transform: scale(1);   
+  }
+
+  .big-red:hover > img.bg-image {
+    transform: scale(1.06); /* slight zoom on hover */
+  }
 
 .big-red::before {
   content: "";
@@ -570,28 +589,194 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
   transition: --ring-inner 400ms ease, --ring-outer 400ms ease;
 }
 
+.big-red::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.65); /* tweak opacity */
+    pointer-events: none;
+    z-index: 0; /* above image */
+  }
+
 .big-red:hover::before {
   /* shrink band to a thin border */
   --ring-inner: 64.5%;
   --ring-outer: 69%;
+
+  
+}
+/* big-red: image as base, ring in ::before */
+.big-green {
+  height: 80%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-image: var(--bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s;
+  z-index: 1;
+
+  /* ring settings */
+  /* --ring-inner: 52%;
+  --ring-outer: 78%; */
+  --ring-rgb: 0, 128, 0; /* red; override per color if needed */
+}
+.big-green > img.bg-image {
+    position: absolute;
+    inset: 0;               /* fill parent */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit; /* keep the circle */
+    filter: grayscale(100%);
+    z-index: 0;
+    transition: transform 400ms ease; /* enable smooth zoom */
+    transform: scale(1);   
+  }
+
+  .big-green:hover > img.bg-image {
+    transform: scale(1.06); /* slight zoom on hover */
+  }
+
+.big-green::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  /* transparent center -> soft red band -> transparent outside */
+  background-image: radial-gradient(circle at 50% 50%,
+    rgba(var(--ring-rgb), 0) var(--ring-inner),
+    rgba(var(--ring-rgb), 0.1) calc(var(--ring-inner) + 4%),
+    /* rgba(var(--ring-rgb), 0.75) calc(var(--ring-outer) - 0%), */
+    rgba(var(--ring-rgb), 1) var(--ring-outer)
+  );
+  transition: --ring-inner 400ms ease, --ring-outer 400ms ease;
+}
+
+.big-green::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.65); /* tweak opacity */
+    pointer-events: none;
+    z-index: 0; /* above image */
+  }
+
+.big-green:hover::before {
+  /* shrink band to a thin border */
+  --ring-inner: 64.5%;
+  --ring-outer: 69%;
+
+  
+}
+/* big-red: image as base, ring in ::before */
+.big-blue {
+  height: 80%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-image: var(--bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s;
+  z-index: 1;
+
+  /* ring settings */
+  /* --ring-inner: 52%;
+  --ring-outer: 78%; */
+  --ring-rgb: 0, 0, 255; /* red; override per color if needed */
+}
+.big-blue > img.bg-image {
+    position: absolute;
+    inset: 0;               /* fill parent */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit; /* keep the circle */
+    filter: grayscale(100%);
+    z-index: 0;
+    transition: transform 400ms ease; /* enable smooth zoom */
+    transform: scale(1);   
+  }
+
+  .big-blue:hover > img.bg-image {
+    transform: scale(1.06); /* slight zoom on hover */
+  }
+
+.big-blue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  /* transparent center -> soft red band -> transparent outside */
+  background-image: radial-gradient(circle at 50% 50%,
+    rgba(var(--ring-rgb), 0) var(--ring-inner),
+    rgba(var(--ring-rgb), 0.1) calc(var(--ring-inner) + 4%),
+    /* rgba(var(--ring-rgb), 0.75) calc(var(--ring-outer) - 0%), */
+    rgba(var(--ring-rgb), 1) var(--ring-outer)
+  );
+  transition: --ring-inner 400ms ease, --ring-outer 400ms ease;
+}
+
+.big-blue::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.65); /* tweak opacity */
+    pointer-events: none;
+    z-index: 0; /* above image */
+  }
+
+.big-blue:hover::before {
+  /* shrink band to a thin border */
+  --ring-inner: 64.5%;
+  --ring-outer: 69%;
+
   
 }
 
+.bg-image {
+    position: absolute;
+    inset: 0;               /* fill parent, no transform needed */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* cover within the circle */
+    border-radius: inherit; /* keep the circle clip */
+    filter: grayscale(100%);
+    z-index: 0;             /* behind ring/text */
+  }
+  
+  /* keep ring above image, below text */
+  .big-red::before { z-index: 1; }
+  .big-red > * { position: relative; z-index: 2; }
+  /* keep ring above image, below text */
+  .big-green::before { z-index: 1; }
+  .big-green > * { position: relative; z-index: 2; }
+  /* keep ring above image, below text */
+  .big-blue::before { z-index: 1; }
+  .big-blue > * { position: relative; z-index: 2; }
 
 
-.big-green {
-    height: 80%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background-color: green;
-    display: flex;
-    justify-content: center;
-    transition: all 0.5s;
-    z-index: 1;
-    position: relative;
-    color: white;
-    text-decoration: none;
-}
 
 @media only screen and (max-width: 991px) {
     .big-green {
@@ -600,69 +785,11 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
     }
 }
 
-.big-green:hover p, .big-green:hover ul {
-    color: black;
-}
-
-.big-green::before {
-    position: absolute;
-    border-radius: 50%;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: radial-gradient(white, rgba(64, 128, 64) 70%, green);
-    z-index: -1;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
-}
-
-.big-green:hover::before {
-    opacity: 1;
-}
-
-.big-blue {
-    height: 80%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background-color: blue;
-    display: flex;
-    justify-content: center;
-    transition: all 0.5s;
-    z-index: 1;
-    position: relative;
-    color: white;
-    text-decoration: none;
-}
-
 @media only screen and (max-width: 991px) {
     .big-blue {
         height: auto;
         width: 100%;    
     }
-}
-
-.big-blue:hover p, .big-blue:hover ul {
-    color: black;
-}
-
-.big-blue::before {
-    position: absolute;
-    border-radius: 50%;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: radial-gradient(white, rgb(109, 109, 255) 70%, blue);
-    z-index: -1;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
-}
-
-.big-blue:hover::before {
-    opacity: 1;
 }
 
 .prev, .next{
