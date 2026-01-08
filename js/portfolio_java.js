@@ -154,6 +154,57 @@ const nextIconProject = '<button type="button" class="next col-2"><p class="mb-0
     $('.fade-in').addClass('visible');
   });
 
+  (function() {
+    const preview = document.getElementById('pw-preview');
+    if (!preview) return;
   
-
+    // ensure two layers exist for crossfade
+    let layers = preview.querySelectorAll('.pw-preview__img');
+    while (layers.length < 2) {
+      const d = document.createElement('div');
+      d.className = 'pw-preview__img';
+      preview.appendChild(d);
+      layers = preview.querySelectorAll('.pw-preview__img');
+    }
+    let active = 0;
+  
+    // center preview vertically to the TOC
+    const toc = document.getElementById('toc') || document.querySelector('.projects.show-large');
+    const positionPreview = () => {
+      if (!toc) return;
+      const r = toc.getBoundingClientRect();
+      const cy = r.top + r.height / 2;
+      preview.style.top = `${cy}px`;    // vertical center of TOC in viewport
+      // keep horizontal centering at 50% via CSS
+    };
+    positionPreview();
+    window.addEventListener('resize', positionPreview, { passive: true });
+    window.addEventListener('scroll', positionPreview, { passive: true });
+    if (toc) toc.addEventListener('scroll', positionPreview, { passive: true });
+  
+    // hover behavior (color + crossfade)
+    const rows = document.querySelectorAll('.projects.show-large a.row');
+    rows.forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        const color = row.getAttribute('data-preview-color') || '';
+        const img = row.getAttribute('data-preview-image') || '';
+  
+        preview.classList.remove('red', 'green', 'blue');
+        if (color) preview.classList.add(color);
+  
+        if (img) {
+          const next = active ^ 1;
+          layers[next].style.backgroundImage = `url("${img}")`;
+          layers[next].classList.add('is-active');
+          layers[active].classList.remove('is-active');
+          active = next;
+        }
+      });
+      row.addEventListener('mouseleave', () => {
+        layers[0].classList.remove('is-active');
+        layers[1].classList.remove('is-active');
+        preview.classList.remove('red', 'green', 'blue');
+      });
+    });
+  })();
   
