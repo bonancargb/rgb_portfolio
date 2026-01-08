@@ -776,7 +776,12 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
   .big-blue::before { z-index: 1; }
   .big-blue > * { position: relative; z-index: 2; }
 
-
+  @media only screen and (max-width: 991px) {
+    .big-red {
+      height: auto;
+      width: 100%;
+    }
+  }
 
 @media only screen and (max-width: 991px) {
     .big-green {
