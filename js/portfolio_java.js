@@ -47,7 +47,7 @@ $(document).ready(function() {
       });
       $(".tags-eventos .dropdown-menu .tag-1").click(function () {
           // alert("clique");
-          $(".brand, .editorial, .packaging, .social_media, .copywriting, .photography .tag-1").addClass("invisivel");
+          $(".brand, .editorial, .packaging, .social_media, .copywriting, .photography, .tag-1").addClass("invisivel");
           $(".web, .todos, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-7, .tag-8").removeClass("invisivel");
           $(".mudar p").text("Web");
       });
@@ -72,28 +72,68 @@ $(document).ready(function() {
       });
       $(".tags-eventos .dropdown-menu .tag-5").click(function () {
         // alert("clique");
-        $(".web, .brand, .editorial, .packaging, .copywriting, .photography, .tag-4").addClass("invisivel");
+        $(".web, .brand, .editorial, .packaging, .copywriting, .photography, .tag-5").addClass("invisivel");
         $(".social_media, .todos, .tag-1, .tag-2, .tag-3, .tag-4 .tag-6, .tag-7, .tag-8").removeClass("invisivel");
         $(".mudar p").text("Social Media");
     });
       $(".tags-eventos .dropdown-menu .tag-6").click(function () {
         // alert("clique");
-        $(".web, .brand, .editorial, .packaging, .social_media, .photography, .tag-4").addClass("invisivel");
+        $(".web, .brand, .editorial, .packaging, .social_media, .photography, .tag-6").addClass("invisivel");
         $(".copywriting, .todos, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-7, .tag-8").removeClass("invisivel");
         $(".mudar p").text("Copywriting");
     });
-      $(".tags-eventos .dropdown-menu .tag-7").click(function () {
-        // alert("clique");
-        $(".web, .brand, .editorial, .packaging, .social_media, .copywriting, .tag-4").addClass("invisivel");
-        $(".photography, .todos, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-8").removeClass("invisivel");
-        $(".mudar p").text("Photography");
-    });
+    //   $(".tags-eventos .dropdown-menu .tag-7").click(function () {
+    //     $(".web, .brand, .editorial, .packaging, .social_media, .copywriting, .tag-4").addClass("invisivel");
+    //     $(".photography, .todos, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-8").removeClass("invisivel");
+    //     $(".mudar p").text("Photography");
+    // });
       $(".tags-eventos .dropdown-menu .tag-8").click(function () {
           // alert("clique");
           $(".todos, .tag-8").addClass("invisivel");
           $(".web, .brand, .editorial, .packaging, .social_media, .copywriting, .photography, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-7").removeClass("invisivel");
           $(".mudar p").text("Show All");
       });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.dropdown').forEach(dd => {
+      const toggle = dd.querySelector('[data-bs-toggle="dropdown"]');
+      const menu = dd.querySelector('.dropdown-menu');
+      if (!toggle || !menu) return;
+  
+      const bs = bootstrap.Dropdown.getOrCreateInstance(toggle);
+  
+      let isClosing = false;
+  
+      // smooth fade-out, then let Bootstrap hide
+      dd.addEventListener('hide.bs.dropdown', (e) => {
+        if (isClosing) {
+          // allow Bootstrap to proceed this time
+          isClosing = false;
+          return;
+        }
+        e.preventDefault();                 // stop immediate hide
+        toggle.setAttribute('aria-expanded', 'false'); // caret updates immediately
+        menu.classList.add('fading-out');   // start opacity 0; keep .show
+        const done = () => {
+          menu.removeEventListener('transitionend', done);
+          // allow Bootstrap to run its own hide now (to clean internal state)
+          isClosing = true;
+          bs.hide();
+          // cleanup classes after Bootstrap toggles .show off
+          menu.classList.remove('fading-out');
+        };
+        // prefer transitionend; fallback timeout
+        menu.addEventListener('transitionend', done);
+        setTimeout(done, 220); // match CSS transition
+      });
+  
+      dd.addEventListener('show.bs.dropdown', () => {
+        // ensure fresh state on open
+        menu.classList.remove('fading-out');
+        toggle.setAttribute('aria-expanded', 'true');
+      });
+    });
   });
 
   // a project
@@ -154,6 +194,25 @@ const nextIconProject = '<button type="button" class="next col-2"><p class="mb-0
     $('.fade-in').addClass('visible');
   });
 
+  // Info slider toggle functionality for SMALL screens
+  $(document).ready(function() {
+    const infoSliderSmall = $('.info-slider-small');
+    const readAboutBtnSmall = $('#readAboutBtnSmall');
+    const closeInfoBtnSmall = $('#closeInfoBtnSmall');
+    
+    // Show info when read about button is clicked
+    readAboutBtnSmall.on('click', function() {
+      infoSliderSmall.addClass('visible');
+      readAboutBtnSmall.addClass('hidden');
+    });
+    
+    // Hide info when close button is clicked
+    closeInfoBtnSmall.on('click', function() {
+      infoSliderSmall.removeClass('visible');
+      readAboutBtnSmall.removeClass('hidden');
+    });
+  });
+
   (function() {
     const preview = document.getElementById('pw-preview');
     if (!preview) return;
@@ -207,4 +266,4 @@ const nextIconProject = '<button type="button" class="next col-2"><p class="mb-0
       });
     });
   })();
-  
+

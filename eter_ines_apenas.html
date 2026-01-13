@@ -146,38 +146,59 @@
         </div>
     </header>
     <main class="a-project red-element eter fade-in">
-        <div class="container-fluid">
+        <div class="container-fluid content-viewport">
             <div class="row show-large">
-                <div class="offset-1 col-4 info too-much-text d-flex align-items-center">
+                <!-- left info column -->
+                <div class="col-6 info too-much-text">
                     <div class="copy">
                         <p>Cover art, vinyl sleeve and concert poster design for the portuguese alternative pop artist
                             <u class="under">Inês Apenas</u>.</p>
                     </div>
+                    <div class="line"></div>
                 </div>
 
-                <div class="line col-1"></div>
+                <!-- right carousel column -->
                 <div class="col-6 d-flex px-5">
                     <div class="container-fluid project-carousel-container">
-                        <div class="project-carousel d-flex row px-0">
-                            <div class="slide px-3">
-                                <img src="images/vinil_mockup_ines_apenas.jpg" class="img-fluid" style="width: 200%;">
+                        <div class="project-carousel px-0">
+                            <!-- keep Éter slides -->
+                            <div class="slide px-3 d-flex flex-column">
+                                <img src="images/vinil_mockup_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Vinyl mockup for Éter.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/poster_mockup_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Poster mockup for Éter's release concert.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/discos_vinil_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Vinyls series.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/exterior_lp_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>LP outer sleeve.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/interior_lp_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>LP inner sleeve.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="dot-container" style="z-index: 10000;"></div> -->
-                </div>   
+                    <!-- optional dots container -->
+                    <div class="dot-container" style="z-index: 10000;"></div>
+                </div>
+
+                <!-- other-project bar -->
                 <div class="col-6 other-project justify-content-around d-flex">
                     <div class="p-0">
                         <a class="no-style" href="seixal_terno.html"><</a>
@@ -188,6 +209,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- small layout -->
             <div class="row show-small">
                 <div class="col-12 container-fluid other-project py-1">
                     <div class="row">
@@ -200,35 +223,61 @@
                         </div>
                     </div>
                 </div>
-                <div class="offset-1 col-10 offset-md-2 col-md-8 d-flex flex-column priority info copy">
+
+                <!-- Read about toggle -->
+                <button class="read-about-btn-small d-flex justify-content-center align-items-center" id="readAboutBtnSmall">
+                    <u class="under">Read about</u>
+                </button>
+
+                <!-- info slider -->
+                <div class="col-10 col-md-8 d-flex flex-column priority info copy info-slider-small">
+                    <button class="close-info-btn-small d-flex justify-content-center align-items-center" id="closeInfoBtnSmall">X</button>
                     <div class="d-flex flex-column">
                         <p>Cover art, vinyl sleeve and concert poster design for the portuguese alternative pop artist
                             <u class="under">Inês Apenas</u>.</p>
                     </div>
                 </div>
-                <div class="hor-line"></div>
+
+                <!-- small carousel -->
                 <div class="col-12 d-flex justify-content-center align-items-start subject mb-4">
                     <div class="container-fluid project-carousel-container">
-                        <div class="project-carousel d-flex row px-0">
-                            <div class="slide px-3">
+                        <div class="project-carousel d-flex justify-content-center row px-0">
+                            <!-- keep Éter slides -->
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/vinil_mockup_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Vinyl mockup for Éter.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/poster_mockup_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Poster mockup for Éter's release concert.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/discos_vinil_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Vinyls series.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/exterior_lp_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>LP outer sleeve.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide px-3 d-flex flex-column">
                                 <img src="images/interior_lp_ines_apenas.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>LP inner sleeve.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- optional dots container -->
                     <!-- <div class="dot-container" style="z-index: 10000;"></div> -->
-                </div>    
+                </div>
             </div>
         </div>
     </main>

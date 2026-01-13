@@ -148,7 +148,7 @@
     <main class="a-project blue-element seixal_terno fade-in">
         <div class="container-fluid">
             <div class="row show-large">
-                <div class="offset-1 col-4 info too-much-text d-flex align-items-center">
+                <div class="col-6 info too-much-text">
                     <div class="copy">
                         <p><u class="under">Seixal Terno</u> is an alternative music festival that has been taking place in Seixal for the last 3 years. For this
                             year's edition <u class="under">bué clichê</u> - mine and <u class="under">André Amado</u>'s creative collective - was invited to develop a new 
@@ -162,7 +162,7 @@
                             <a class="button-skin" href="https://bonancargb.github.io/roterdao_arquivo/"><u class="under">Check website</u></a>
                         </div> -->
                     </div>
-                </div>
+                
                 <!-- <div class="offset-1 col-4 container-fluid other-project">
                     <div class="row">
                         <div class="col-3 justify-content-end d-flex p-0">
@@ -174,21 +174,34 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="line col-1"></div>
+                    <div class="line"></div>
+                </div>
                 <div class="col-6 d-flex px-5">
                     <div class="container-fluid project-carousel-container">
                         <div class="project-carousel d-flex row px-0">
-                            <div class="slide px-3">
-                                <video src="images/seixal_maos_movel.mp4" muted autoplay loop class="img-fluid">
+                            <div class="slide d-flex flex-column px-3">
+                                <video src="images/seixal_maos_movel.mp4" muted autoplay loop class="img-fluid"></video>
+                                <div class="pt-3 slide-description">
+                                  <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/seixal_poster_mockup_insta.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                  <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
-                                <video src="images/seixal_movel_vermelho.mp4" muted autoplay loop class="img-fluid">
+                            <div class="slide d-flex flex-column px-3">
+                                <video src="images/seixal_movel_vermelho.mp4" muted autoplay loop class="img-fluid"></video>
+                                <div class="pt-3 slide-description">
+                                  <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
-                                <video src="images/seixal_pc_maos.mp4" muted autoplay loop class="img-fluid">
+                            <div class="slide d-flex flex-column px-3">
+                                <video src="images/seixal_pc_maos.mp4" muted autoplay loop class="img-fluid"></video>
+                                <div class="pt-3 slide-description">
+                                  <p>Performance panflet.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -205,18 +218,25 @@
                 </div>
             </div>
             <div class="row show-small">
+                <!-- Read about button (visible when info is hidden) -->
+                <button class="read-about-btn-small d-flex justify-content-center align-items-center" id="readAboutBtnSmall">
+                    <u class="under">Read about</u>
+                </button>
+                
                 <div class="col-12 container-fluid other-project py-1">
                     <div class="row">
                         <div class="col-3 col-sm-4 justify-content-center d-flex p-0">
-                            <a class="no-style ajuste fino" href="ineur.html"><</a>
+                            <a class="no-style ajuste fino" href="sel.html"><</a>
                         </div>
                         <div class="col-6 col-sm-4 d-flex justify-content-center ajuste">more projects</div>
                         <div class="col-3 col-sm-4 justify-content-center d-flex p-0 ajuste fino">
-                            <a class="no-style" href="eter_ines_apenas.html">></a>
+                            <a class="no-style" href="seixal_terno.html">></a>
                         </div>
                     </div>
                 </div>
-                <div class="offset-1 col-10 offset-md-2 col-md-8 d-flex flex-column priority info copy">
+                <div class="col-10 col-md-8 d-flex flex-column priority info copy info-slider-small">
+                    <!-- Close X button inside info block -->
+                    <button class="close-info-btn-small d-flex justify-content-center align-items-center" id="closeInfoBtnSmall">X</button>
                     <div class="d-flex flex-column">
                         <p><u class="under">Seixal Terno</u> is an alternative music festival that has been taking place in Seixal for the last 3 years. For this
                             year's edition <u class="under">bué clichê</u> - mine and <u class="under">André Amado</u>'s creative collective - was invited to develop a new 
@@ -231,21 +251,32 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="hor-line"></div>
                 <div class="col-12 d-flex justify-content-center align-items-start subject mb-4">
                     <div class="container-fluid project-carousel-container">
                         <div class="project-carousel d-flex justify-content-center row px-0">
-                            <div class="slide px-3">
-                                <video src="images/seixal_maos_movel.mp4" muted autoplay loop class="img-fluid">
+                            <div class="slide d-flex flex-column px-3">
+                                <video src="images/seixal_maos_movel.mp4" muted autoplay loop class="img-fluid"></video>
+                                <div class="pt-3 slide-description">
+                                  <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/seixal_poster_mockup_insta.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                  <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
-                                <video src="images/seixal_movel_vermelho.mp4" muted autoplay loop class="img-fluid">
+                            <div class="slide d-flex flex-column px-3">
+                                <video src="images/seixal_movel_vermelho.mp4" muted autoplay loop class="img-fluid"></video>
+                                <div class="pt-3 slide-description">
+                                  <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
-                                <video src="images/seixal_pc_maos.mp4" muted autoplay loop class="img-fluid">
+                            <div class="slide d-flex flex-column px-3">
+                                <video src="images/seixal_pc_maos.mp4" muted autoplay loop class="img-fluid"></video>
+                                <div class="pt-3 slide-description">
+                                  <p>Performance panflet.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

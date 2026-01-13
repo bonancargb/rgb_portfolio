@@ -146,52 +146,64 @@
         </div>
     </header>
     <main class="a-project green-element ineur fade-in">
-        <div class="container-fluid">
+        <div class="container-fluid content-viewport">
             <div class="row show-large">
-                <div class="offset-1 col-4 info too-much-text d-flex align-items-center">
+                <div class="col-6 info too-much-text">
                     <div class="copy">
                         <p>As a classical guitarist <u class="under">Marta Fonseca</u> knows the ins and outs of classical music concerts and recitals. For that reason,
                             for her new tour there was an urge to break the mold, going against what one conventionally associates with the genre.</p>
                         <p>Asked to develop an image that would reflect that <u class="under">rebelious</u> act and could yet retain some <u class="under">formality</u>, I developed posters
-                            for the tour and am currently working on other elements such as the programme sheet.
+                            and a panflet for the tour mixing grainy visuals - photos courtesy of <u class="under">Beatriz Felício</u> - with simple typography and some blackletter details.
+                        </p>
+                        <p>With the beginning of 2026 a new wave of concerts has come, this time in <u class="under">Amsterdam</u>, where Marta is currently living. For the new
+                            dates a visual language that reflected this new chapter but kept some of the principles of the previous one was created.</p>
+                        <p>Using Beatriz Felício's photos of one of last year's final gigs as a starting block once again, this time giving them an even more central role, I embraced their orange
+                            undertones to invoke the Dutch identity, constrasting them with white and green typography and visual elements. Simultaneously, a simplified
+                            depiction of the circuit between the venues where the performances will take place was integrated, as well as some pixelized tulips to add to the theme.
                         </p>
                         <!-- <div>
                             <a class="button-skin" href="https://bonancargb.github.io/roterdao_arquivo/"><u class="under">Check website</u></a>
                         </div> -->
                     </div>
+                    <div class="line"></div>
                 </div>
-                <!-- <div class="offset-1 col-4 container-fluid other-project">
-                    <div class="row">
-                        <div class="col-3 justify-content-end d-flex p-0">
-                            <a class="no-style" href="aniversario_atomico.html"><</a>
-                        </div>
-                        <div class="col-6 d-flex justify-content-center">more projects</div>
-                        <div class="col-3 justify-content-start d-flex p-0">
-                            <a class="no-style" href="ineur.html">></a>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="line col-1"></div>
+                <!-- <div class="line col-1"></div> -->
                 <div class="col-6 d-flex px-5">
                     <div class="container-fluid project-carousel-container">
                         <div class="project-carousel d-flex row px-0">
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_main.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Main poster for the 2025 tour.</p>
+                                </div>  
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_leiria.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Specific tour date iteration.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_lx_good.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Specific tour date iteration.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_prog_frente.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
-                                <img src="images/ineur_prog_dentro.jpg" class="img-fluid">
+                            <div class="slide d-flex flex-column px-3">
+                                <img src="images/ineur_prog_dentro.jpg" class="img-fluid"><div class="pt-3 slide-description">
+                                    <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
-                                <img src="images/ineur_prog_tras.jpg" class="img-fluid">
+                            <div class="slide d-flex flex-column px-3">
+                                <img src="images/ineur_prog_tras.jpg" class="img-fluid"><div class="pt-3 slide-description">
+                                    <p>Performance panflet.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -208,6 +220,11 @@
                 </div>
             </div>
             <div class="row show-small">
+                <!-- Read about button (visible when info is hidden) -->
+                <button class="read-about-btn-small d-flex justify-content-center align-items-center" id="readAboutBtnSmall">
+                    <u class="under">Read about</u>
+                </button>
+                
                 <div class="col-12 container-fluid other-project py-1">
                     <div class="row">
                         <div class="col-3 col-sm-4 justify-content-center d-flex p-0">
@@ -219,39 +236,62 @@
                         </div>
                     </div>
                 </div>
-                <div class="offset-1 col-10 offset-md-2 col-md-8 d-flex flex-column priority info copy">
+                <div class="col-10 col-md-8 d-flex flex-column priority info copy info-slider-small">
+                    <!-- Close X button inside info block -->
+                    <button class="close-info-btn-small d-flex justify-content-center align-items-center" id="closeInfoBtnSmall">X</button>
+                    
                     <div class="d-flex flex-column">
                         <p>As a classical guitarist <u class="under">Marta Fonseca</u> knows the ins and outs of classical music concerts and recitals. For that reason,
                             for her new tour there was an urge to break the mold, going against what one conventionally associates with the genre.</p>
                         <p>Asked to develop an image that would reflect that <u class="under">rebelious</u> act and could yet retain some <u class="under">formality</u>, I developed posters
-                            for the tour and am currently working on other elements such as the programme sheet.
+                            and a panflet for the tour mixing grainy visuals - photos courtesy of <u class="under">Beatriz Felício</u> - with simple typography and some blackletter details.
                         </p>
-                        <!-- <div>
-                            <a class="button-skin" href="https://bonancargb.github.io/roterdao_arquivo/"><u class="under">Check website</u></a>
-                        </div> -->
+                        <p>With the beginning of 2026 a new wave of concerts has come, this time in <u class="under">Amsterdam</u>, where Marta is currently living. For the new
+                            dates a visual language that reflected this new chapter but kept some of the principles of the previous one was created.</p>
+                        <p>Using Beatriz Felício's photos of one of last year's final gigs as a starting block once again, this time giving them an even more central role, I embraced their orange
+                            undertones to invoke the Dutch identity, constrasting them with white and green typography and visual elements. Simultaneously, a simplified
+                            depiction of the circuit between the venues where the performances will take place was integrated, as well as some pixelized tulips to add to the theme.
+                        </p>
                     </div>
                 </div>
-                <div class="hor-line"></div>
                 <div class="col-12 d-flex justify-content-center align-items-start subject mb-4">
                     <div class="container-fluid project-carousel-container">
                         <div class="project-carousel d-flex justify-content-center row px-0">
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_main.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Main poster for the 2025 tour.</p>
+                                </div>  
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_leiria.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Specific tour date iteration.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_lx_good.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Specific tour date iteration.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_prog_frente.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_prog_dentro.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Performance panflet.</p>
+                                </div>
                             </div>
-                            <div class="slide px-3">
+                            <div class="slide d-flex flex-column px-3">
                                 <img src="images/ineur_prog_tras.jpg" class="img-fluid">
+                                <div class="pt-3 slide-description">
+                                    <p>Performance panflet.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

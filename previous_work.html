@@ -30,7 +30,7 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
 </head>
-<body>
+<body class="previous_work_body">
     <header>
         <div class="container-fluid header-big">
             <div class="row">
@@ -148,27 +148,35 @@
             </div>
         </div>
     </header>
-    <main class="container-fluid pb-5 previous_work fade-in">
+    <main class="container-fluid pb-5 previous_work fade-in px-0">
         <section class="row">
           <div class="offset-lg-2 col-12 col-lg-8 titulo-1-nivel">
             <img src="img/AGENDA.svg" class="img-fluid" alt="Agenda">
           </div>
         </section>
-            <section>
-                <div class="dropdown tags-eventos d-flex justify-content-center pt-5">
-                    <button class="dropdown-toggle d-flex align-items-center justify-content-between mudar" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
-                        <p class="mb-0">Show All</p> 
+            <section class="container-dropdown">
+                <div class="dropdown tags-eventos d-flex justify-content-center pt-5 pb-lg-0 pb-4">
+                    <button
+                      id="filterDropdown"                               
+                      class="dropdown-toggle d-flex align-items-center justify-content-between mudar"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      data-bs-auto-close="inside"
+                      aria-expanded="false">
+                      <p class="mb-0">Show All</p>
                     </button>
                     <ul class="dropdown-menu py-0" aria-labelledby="dropdownMenuOffset">
-                        <li><button class="dropdown-item botao-preto tag-1">Web</button></li>
-                        <li><button class="dropdown-item botao-preto tag-2">Brand</button></li>
-                        <li><button class="dropdown-item botao-preto tag-3">Editorial</button></li>
-                        <li><button class="dropdown-item botao-preto tag-4">Packaging</button></li>
-                        <li><button class="dropdown-item botao-preto tag-5">Social Media</button></li>
-                        <li><button class="dropdown-item botao-preto tag-6">Copywriting</button></li>
-                        <li><button class="dropdown-item botao-preto tag-7">Photography</button></li>
-                        <li><button class="dropdown-item botao-preto tag-8 todos invisivel">Show All</button></li>
-                    </ul>
+                      <div class="dropdown-content">
+                          <li><button class="dropdown-item botao-preto tag-1">Web</button></li>
+                          <li><button class="dropdown-item botao-preto tag-2">Brand</button></li>
+                          <li><button class="dropdown-item botao-preto tag-3">Editorial</button></li>
+                          <li><button class="dropdown-item botao-preto tag-4">Packaging</button></li>
+                          <li><button class="dropdown-item botao-preto tag-5">Social Media</button></li>
+                          <li><button class="dropdown-item botao-preto tag-6">Copywriting</button></li>
+                          <!-- <li><button class="dropdown-item botao-preto tag-7">Photography</button></li> -->
+                          <li><button class="dropdown-item botao-preto tag-8 todos invisivel">Show All</button></li>
+                        </div>
+                      </ul>
                 </div>
             </section>
     
@@ -246,9 +254,9 @@
 
                 
         
-        <section class="container-fluid py-4 px-0 projects show-small">
+        <section class="container-fluid pb-4 px-0 projects show-small">
             <div class="row">
-                <div class="hor-line"></div>
+                <!-- <div class="hor-line"></div> -->
 
                 <a href="sel.html" class="flex-column brand social_media py-4 d-flex align-items-center sel">
                     <div class=" d-flex">
@@ -258,7 +266,7 @@
                         <p>Brand, Social Media</p>
                     </div>
                 </a>
-                <div class="hor-line design"></div>
+                
 
                 <a href="ineur.html" class="flex-column brand editorial social_media py-4 d-flex align-items-center ineur">
                     <div class=" d-flex">
@@ -268,7 +276,7 @@
                         <p>Brand, Editorial, Social Media</p>
                     </div>
                 </a>
-                <div class="hor-line design"></div>
+            
 
                 <a href="seixal_terno.html" class="flex-column brand social_media py-4 d-flex align-items-center seixal_terno">
                     <div class=" d-flex">
@@ -278,7 +286,7 @@
                         <p>Brand, Social Media</p>
                     </div>
                 </a>
-                <div class="hor-line design"></div>
+              
 
                 <a href="eter_ines_apenas.html" class="flex-column social_media packaging py-4 d-flex align-items-center eter">
                     <div class=" d-flex">
@@ -288,7 +296,7 @@
                         <p>Social Media, Packaging</p>
                     </div>
                 </a>
-                <div class="hor-line design"></div>
+
 
                 <a href="aniversario_punch.html" class="flex-column social_media py-4 d-flex align-items-center aniversario_punch">
                     <div class=" d-flex">
@@ -298,7 +306,7 @@
                         <p>Social Media</p>
                     </div>
                 </a>
-                <div class="hor-line design"></div>
+         
 
                 <a href="aniversario_atomico.html" class="flex-column social_media py-4 d-flex align-items-center aniversario_atomico">
                     <div class=" d-flex">
@@ -308,7 +316,7 @@
                         <p>Social Media</p>
                     </div>
                 </a>
-                <div class="hor-line design"></div>
+        
 
                 <!-- <a href="se_ao_menos.html" class="flex-column design py-4 d-flex align-items-center se-ao-menos">
                     <div class=" d-flex">
@@ -329,8 +337,6 @@
                         <p>Web, Social Media, Brand, Copywriting</p>
                     </div>
                 </a>
-                <div class="hor-line web-design design"></div>
-
 
                 <!-- <a href="cereais.html" class="d-flex social_media brand copywriting align-items-center flex-column py-4 cereais">
                     <div class=" d-flex">
