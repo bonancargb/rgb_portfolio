@@ -7,7 +7,7 @@ $(document).ready(function() {
       centerMode:true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 6000,
       infinite:true,
     //   centerMode: true,

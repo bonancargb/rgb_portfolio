@@ -645,6 +645,7 @@ main.a-project {
     font-weight: lighter; 
     position: absolute; 
     margin-top: 25%;
+    text-align: center;
 }
 @media only screen and (max-width: 499px) { .tags { font-size: 0.8rem; } }
 footer {
