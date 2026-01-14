@@ -149,9 +149,9 @@
         </div>
     </header>
     <main class="about_me fade-in">
-        <div class="container-fluid">
+        <div class="container-fluid content-viewport">
             <div class="row show-large">
-                <div class="offset-1 col-4 info too-much-text">
+                <div class="col-6 info too-much-text">
                     <div class="copy">
                         <p>Hi there again. My name is <u class="under">Ricardo Barroso</u> and I'm a musician turned UX/UI and Graphic Designer from Lisbon, Portugal. 
                             More than that, however, I am <u class="under">passionate about communication</u> in any shape and form.</p>
@@ -170,14 +170,25 @@
                             <a class="button-skin" href="contact_me.html"><u class="under">Contact me </u><div class="arrow-link">></div></a>
                         </div>
                     </div>
+                    <div class="line"></div>
                 </div>
-                <div class="line col-1"></div>
-                <div class="offset-1 col-4 subject d-flex align-items-center justify-content-center thats-me-container">
-                    <img src="images/about_me_1.jpg" class="img-fluid thats-me">
+                <div class="col-6 d-flex px-5">
+                    <div class="container-fluid d-flex align-items-center justify-content-center">
+                        <div class="subject d-flex flex-column align-items-center justify-content-center thats-me-container">
+                            <img src="images/about_me_1.jpg" class="img-fluid thats-me">
+                            <div class="pt-3 slide-description">
+                                <p>Me with my favourite meal.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row show-small">
-                <div class="offset-1 col-10 offset-md-2 col-md-8 d-flex flex-column priority info copy">
+                <button class="read-about-btn-small d-flex justify-content-center align-items-center" id="readAboutBtnSmall">
+                    <u class="under">Read about me</u>
+                </button>
+                <div class="col-10 col-md-8 d-flex flex-column priority info copy info-slider-small">
+                    <button class="close-info-btn-small d-flex justify-content-center align-items-center" id="closeInfoBtnSmall">X</button>
                     <div class="d-flex flex-column">
                         <p>Hi there again. My name is <u class="under">Ricardo Barroso</u> and I'm a musician turned UX/UI and Graphic Designer from Lisbon, Portugal. 
                             More than that, however, I am <u class="under">passionate about communication</u> in any shape and form.</p>
@@ -197,9 +208,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="hor-line"></div> -->
-                <div class="p-0 subject">
-                    <img src="images/about_me_1.jpg" class="img-fluid thats-me">
+                <div class="col-12 d-flex justify-content-center align-items-start subject mb-4">
+                    <div class="container-fluid d-flex flex-column align-items-center justify-content-center h-100 pt-5">
+                        <img src="images/about_me_1.jpg" class="img-fluid thats-me">
+                        <div class="pt-3 slide-description">
+                            <p>Me with my favourite meal.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -70,7 +70,7 @@ header {
     background-color: whitesmoke;
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000000;
 } 
 header p {
     line-height: 1em;
@@ -412,6 +412,29 @@ main.a-project {
         height: 100%;
         max-height: 100%;
     }
+}
+
+/* Small subject container: define height so inner image constraints apply */
+@media only screen and (max-width: 991px) {
+  .about_me .show-small .subject .container-fluid {
+    height: 73vh;              /* matches small slide height used on other pages */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .about_me .show-small .thats-me {
+    max-height: 75vh;           /* consistent with other small slides */
+    width: auto;
+    height: auto;
+    object-fit: contain;       /* avoid cropping */
+  }
+}
+
+/* Remove cover behavior that overrides portrait scaling on small */
+.show-small .thats-me {
+  min-width: unset;            /* remove forced full width */
+  object-fit: contain;         /* keep aspect without crop */
 }
 
 /* ===========================
@@ -838,7 +861,9 @@ footer {
 .show-large .a-project .slick-dots { bottom: 1rem; position: absolute; }
 .show-large .slide-description { margin-top: 1rem; text-align: center; }
 
-.about_me .info { height: calc(100vh - 70px); }
+.about_me .info { 
+    height: 100vh; 
+}
 .show-large .info { /* align-items: center; */ }
 .show-small .info {
     background-color: whitesmoke;
@@ -852,10 +877,15 @@ footer {
     padding-right: 4rem;
     border-bottom: 1px solid rgb(16, 16, 16);
 }
+
+.about_me .show-small .info {
+    height: calc(100vh - 73px);
+    max-height: none;
+}
+
 @media only screen and (max-width: 499px) {
     .show-small .info { padding-left: 2rem; padding-right: 2rem; }
 }
-.about_me .show-small .info { height: fit-content; }
 
 /* ===========================
    Copy blocks / Lines
@@ -865,7 +895,14 @@ footer {
     padding-bottom: 5rem;
     height: fit-content;
 }
-.contact_me .show-small .copy { padding-top: 0; padding-bottom: 0; }
+.contact_me .show-small .copy { 
+    padding-top: 0; padding-bottom: 0; 
+}
+@media only screen and (min-width: 600px) { 
+    .contact_me .copy { 
+        border-bottom: none !important;
+    } 
+}
 .line {
     border-right: 1px solid rgb(16, 16, 16);
     z-index: -1;
@@ -873,6 +910,8 @@ footer {
     position: absolute;
     top: 0px;
     right: 50%;
+    justify-content: center;
+    height: 100vh;
 }
 .hor-line {
     border-bottom: 1px solid rgb(16, 16, 16);
@@ -1069,9 +1108,13 @@ header:hover .carousel-header-short { opacity: 0; }
         bottom: -1em; 
     }
 }
-@media only screen and (max-width: 599px) { .about_me .subject { margin-bottom: 72px !important; } }
-.thats-me { max-height: 80%; }
-.show-small .thats-me { min-width: 100vw; object-fit: cover; }
+@media only screen and (max-width: 599px) { 
+    .about_me .subject { 
+        margin-bottom: 72px !important; 
+    } 
+}
+
+
 .btn-no-style {
     background-color: transparent;
     border: transparent;
@@ -1082,7 +1125,10 @@ header:hover .carousel-header-short { opacity: 0; }
 /* ===========================
    Visibility helpers
    =========================== */
-@media only screen and (max-width: 991px) { .show-large { display: none; } }
+@media only screen and (max-width: 991px) { 
+    .show-large { 
+        display: none; 
+    } }
 @media only screen and (min-width: 992px) { 
     .show-small { 
         display: none; 
