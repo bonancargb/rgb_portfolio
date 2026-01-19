@@ -611,6 +611,7 @@ main.a-project {
         height: calc(100svh - 71px);
         position: relative;
         min-height: unset !important;
+        overflow-y: hidden;
     }
     .index-portfolio .prev, .index-portfolio .next { 
         position: absolute; 
