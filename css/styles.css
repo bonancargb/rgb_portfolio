@@ -605,7 +605,7 @@ main.a-project {
 }
 @media only screen and (max-width: 575px) {
     .index-portfolio {
-        height: calc(100vh - 71px);
+        height: calc(100svh - 71px);
         position: relative;
         min-height: unset !important;
     }
