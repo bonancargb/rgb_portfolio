@@ -604,8 +604,11 @@ main.a-project {
     height: 100%;
 }
 @media only screen and (max-width: 575px) {
+    .body {
+        height: 100svh;
+    }
     .rgb {
-        /* margin-top: 2px !important; */
+        transform: translateY(3px);
     }
     .index-portfolio {
         height: calc(100svh - 71px);
