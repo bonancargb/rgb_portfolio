@@ -973,9 +973,7 @@ footer {
     margin-bottom: 2.5rem;
 }
 
-.previous_work {
-    padding-bottom: 72px;
-}
+
 
 .previous_work .hor-line { margin-bottom: 0; }
 
@@ -1125,6 +1123,9 @@ header:hover .carousel-header-short { opacity: 0; }
 }
 .projects a { 
     border-bottom: 1px solid;
+}
+.previous_work {
+    margin-bottom: 72px;
 }
 }
 
