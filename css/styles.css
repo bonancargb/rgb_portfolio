@@ -604,6 +604,9 @@ main.a-project {
     height: 100%;
 }
 @media only screen and (max-width: 575px) {
+    .a-project .slide {
+        max-height: 73svh !important;
+    }
     .body {
         height: 100svh;
     }
