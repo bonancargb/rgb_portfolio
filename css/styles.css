@@ -1363,31 +1363,7 @@ header:hover .carousel-header-short { opacity: 0; }
   height: inherit;
 }
 
-@media (max-width: 991px) {
-  html, body {
-    height: 100svh; /* accounts for mobile browser UI */
-  }
 
-  /* about and project info columns */
-  .show-small .info,
-  .copy {
-    /* ensure bottom space is visible above the Android bar */
-    padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
-    /* avoid clipping margins by parent overflow */
-    margin-bottom: 0;
-  }
-
-  /* project carousel container (if it touches the bottom) */
-  .project-carousel-container {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    overflow: visible; /* allow captions/arrows to render beyond */
-  }
-
-  /* footer mobile area */
-  .footer-mobile {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-}
 
 /* Aniversário Atómico: match slide image sizing logic from ineur/sel */
 /* .show-large .aniversario_atomico .project-carousel .slick-list,
