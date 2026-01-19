@@ -357,7 +357,7 @@ main.a-project {
 
 @media only screen and (max-width: 991px) {
     body {
-      overflow: hidden;            
+      overflow: hidden !important;            
       position: fixed;             
       width: 100%;
       height: 100vh;               
@@ -940,8 +940,8 @@ footer {
     border-bottom: 1px solid rgb(16, 16, 16);
 }
 
-.about_me .show-small .info {
-    height: calc(100vh - 73px);
+.show-small .info {
+    height: calc(100svh - 73px) !important;
     max-height: none;
 }
 
@@ -1352,6 +1352,7 @@ header:hover .carousel-header-short { opacity: 0; }
     .info-slider-small {
         transform: translateY(-110%);
         transition: transform 0.5s ease;
+
     }
     .info-slider-small.visible { transform: translateY(0); }
 }
@@ -1398,3 +1399,100 @@ header:hover .carousel-header-short { opacity: 0; }
   object-fit: contain;
   display: block;
 } */
+
+/* Previous Work: small screen scrolling fixes */
+@media only screen and (max-width: 991px) {
+  /* let the page body scroll on previous_work */
+  body.previous_work_body {
+    position: static !important;
+    overflow-y: auto !important;
+    height: auto !important;
+  }
+  /* main should not be fixed on previous_work; allow natural flow */
+  body.previous_work_body main {
+    position: static !important;
+    top: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  /* show-small container should not enforce viewport height or inner scroll */
+  body.previous_work_body .show-small {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  /* the small projects list should not create its own scrollbar */
+  body.previous_work_body .projects.show-small {
+    overflow-y: visible !important;
+    height: fit-content !important;
+  }
+}
+
+/* Header/footer remain fixed globally; ensure small projects content clears footer */
+@media only screen and (max-width: 599px) {
+  body.previous_work_body .previous_work {
+    margin-bottom: 72px !important; /* space above fixed footer */
+  }
+}
+
+/* Previous Work: small screen, lock header/footer, scroll only the projects list */
+@media only screen and (max-width: 991px) {
+  /* keep header fixed globally (already fixed); prevent page-level scrollbars */
+  html, body.previous_work_body {
+    overflow: hidden !important;
+    height: 100svh !important;
+  }
+
+  /* main flows under fixed header/footer but does not scroll itself */
+  body.previous_work_body main.previous_work,
+  body.previous_work_body main.container-fluid.previous_work {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-top: 36px;  /* header height */
+  }
+
+  /* show-small list becomes the scroll container */
+  body.previous_work_body .projects.show-small {
+    /* header 36px + footer 36px + some safe-bottom for Android UI */
+    height: calc(100svh - 72px - 24px) !important; /* reduce a bit to allow overscroll */
+    max-height: calc(100svh - 72px - 24px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: calc(48px + var(--safe-bottom, 0px) + 48px) !important; /* footer + safe area + larger buffer */
+    scroll-padding-bottom: calc(48px + var(--safe-bottom, 0px) + 48px);
+  }
+
+  /* avoid internal scroll on rows/inner wrappers */
+  body.previous_work_body .projects.show-small .row {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* keep large version unaffected */
+  body.previous_work_body .projects.show-large {
+    overflow: visible !important;
+  }
+}
+
+/* optional: ensure footer overlay doesn’t clip content in other small lists */
+@media only screen and (max-width: 599px) {
+  .projects.show-small {
+    padding-bottom: calc(36px + var(--safe-bottom, 0px) + 48px) !important;
+    scroll-padding-bottom: calc(36px + var(--safe-bottom, 0px) + 48px);
+  }
+}
+
+/* Previous Work: projects lists should only scroll vertically */
+.projects.show-small,
+.projects.show-large {
+  overflow-x: hidden !important;
+  overscroll-behavior-x: contain;
+}
+
+/* Add a bit of visual separation from the dropdown */
+.previous_work_body .projects {
+  /* light spacing under the dropdown so filtered items don’t appear mid-page */
+  padding-top: 4px;
+}

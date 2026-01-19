@@ -50,12 +50,15 @@ $(document).ready(function() {
           $(".brand, .editorial, .packaging, .social_media, .copywriting, .photography, .tag-1").addClass("invisivel");
           $(".web, .todos, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-7, .tag-8").removeClass("invisivel");
           $(".mudar p").text("Web");
+          // scroll projects to top after filtering
+          resetProjectsScroll();
       });
       $(".tags-eventos .dropdown-menu .tag-2").click(function () {
           // alert("clique");
           $(".web, .editorial, .packaging, .social_media, .copywriting, .photography, .tag-2").addClass("invisivel");
           $(".brand, .todos, .tag-1, .tag-3, .tag-4, .tag-5, .tag-6, tag-7, tag-8").removeClass("invisivel");
           $(".mudar p").text("Brand");
+          resetProjectsScroll();
           
       });
       $(".tags-eventos .dropdown-menu .tag-3").click(function () {
@@ -63,24 +66,28 @@ $(document).ready(function() {
           $(".web, .brand, .packaging, .social_media, .copywriting, .photography, .tag-3").addClass("invisivel");
           $(".editorial, .todos, .tag-1, .tag-2, .tag-4, .tag-5, .tag-6, .tag-7, .tag-8").removeClass("invisivel");
           $(".mudar p").text("Editorial");
+          resetProjectsScroll();
       });
       $(".tags-eventos .dropdown-menu .tag-4").click(function () {
           // alert("clique");
           $(".web, .brand, .editorial, .social_media, .copywriting, .photography, .tag-4").addClass("invisivel");
           $(".packaging, .todos, .tag-1, .tag-2, .tag-3, .tag-5, .tag-6, .tag-7, .tag-8").removeClass("invisivel");
           $(".mudar p").text("Packaging");
+          resetProjectsScroll();
       });
       $(".tags-eventos .dropdown-menu .tag-5").click(function () {
         // alert("clique");
         $(".web, .brand, .editorial, .packaging, .copywriting, .photography, .tag-5").addClass("invisivel");
         $(".social_media, .todos, .tag-1, .tag-2, .tag-3, .tag-4 .tag-6, .tag-7, .tag-8").removeClass("invisivel");
         $(".mudar p").text("Social Media");
+        resetProjectsScroll();
     });
       $(".tags-eventos .dropdown-menu .tag-6").click(function () {
         // alert("clique");
         $(".web, .brand, .editorial, .packaging, .social_media, .photography, .tag-6").addClass("invisivel");
         $(".copywriting, .todos, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-7, .tag-8").removeClass("invisivel");
         $(".mudar p").text("Copywriting");
+        resetProjectsScroll();
     });
     //   $(".tags-eventos .dropdown-menu .tag-7").click(function () {
     //     $(".web, .brand, .editorial, .packaging, .social_media, .copywriting, .tag-4").addClass("invisivel");
@@ -92,6 +99,7 @@ $(document).ready(function() {
           $(".todos, .tag-8").addClass("invisivel");
           $(".web, .brand, .editorial, .packaging, .social_media, .copywriting, .photography, .tag-1, .tag-2, .tag-3, .tag-4, .tag-5, .tag-6, .tag-7").removeClass("invisivel");
           $(".mudar p").text("Show All");
+          resetProjectsScroll();
       });
   });
 
@@ -135,6 +143,27 @@ $(document).ready(function() {
       });
     });
   });
+
+  // Ensure filtered results start just below dropdown and only Y-scroll is used
+  function resetProjectsScroll() {
+    const dropdown = document.querySelector('.container-dropdown');
+    const projectsSmall = document.querySelector('.projects.show-small');
+    const projectsLarge = document.querySelector('.projects.show-large');
+  
+    // reset internal scroll for list containers
+    [projectsSmall, projectsLarge].forEach(el => {
+      if (el) {
+        el.scrollTop = 0;
+        el.style.overflowX = 'hidden';
+      }
+    });
+  
+    // scroll page so projects start below the dropdown (large layout)
+    if (dropdown && projectsLarge) {
+      const y = dropdown.offsetTop + dropdown.offsetHeight;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
 
   // a project
 
