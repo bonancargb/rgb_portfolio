@@ -342,6 +342,12 @@ main.a-project {
 /* ===========================
    Mobile layout blocks (<=991px)
    =========================== */
+
+.thats-me {
+    object-fit: contain;
+    height: 70vh;
+}
+
 @media only screen and (max-width: 991px) {
     body {
       overflow: hidden;            
@@ -452,6 +458,8 @@ main.a-project {
     letter-spacing: -0.05em;
     top: 0;
     bottom: 0;
+    line-height: 0.8;
+    text-align: center;
 }
 @media only screen and (max-width: 799px) { .index-carousel .titulo { font-size: 4rem; } }
 @media only screen and (max-width: 699px) { .index-carousel .titulo { font-size: 3.4rem; } }

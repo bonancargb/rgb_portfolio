@@ -149,7 +149,7 @@ const nextIconProject = '<button type="button" class="next col-2"><p class="mb-0
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 6000,
+      autoplaySpeed: 10000,
       infinite:true,
     //   centerMode: true,
     //   centerPadding: 'calc(50% - 600px)',
