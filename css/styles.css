@@ -966,6 +966,11 @@ footer {
     border-bottom: 1px solid rgb(16, 16, 16);
     margin-bottom: 2.5rem;
 }
+
+.previous_work {
+    padding-bottom: 72px;
+}
+
 .previous_work .hor-line { margin-bottom: 0; }
 
 .previous_work .dropdown-item {
@@ -1335,7 +1340,7 @@ header:hover .carousel-header-short { opacity: 0; }
    =========================== */
 @media only screen and (max-width: 991px) {
     .info-slider-small {
-        transform: translateY(-100%);
+        transform: translateY(-110%);
         transition: transform 0.5s ease;
     }
     .info-slider-small.visible { transform: translateY(0); }
