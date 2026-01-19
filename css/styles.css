@@ -614,7 +614,7 @@ main.a-project {
     }
     .index-portfolio .prev {
         left: 0; 
-        bottom: 0; 
+        top: calc(100% - 71px); 
         height: 72px; 
         font-size: 6rem; 
         line-height: 0em; 
@@ -623,7 +623,7 @@ main.a-project {
     }
     .index-portfolio .next {
         right: 0; 
-        bottom: 0; 
+        top: calc(100% - 71px); 
         height: 72px; 
         font-size: 6rem; 
         line-height: 0em; 
