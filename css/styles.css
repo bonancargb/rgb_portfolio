@@ -174,11 +174,11 @@ header .header-big:hover .span-3, header .expanded.span-3 {
 }
 header .header-big:hover .circulo, header .expanded.circulo { opacity: 1; }
 @keyframes volta {
-    0% { margin-top: 0.15em; margin-left: -0.70em; }
-    25% { margin-top: 0.15em; margin-left: -1.88em; }
+    0% { margin-top: 0.10em; margin-left: -0.70em; }
+    25% { margin-top: 0.10em; margin-left: -1.88em; }
     50% { margin-top: -0.83em; margin-left: -1.88em; }
-    75% { margin-top: 0.15em; margin-left: -1.88em; }
-    100% { margin-top: 0.15em; margin-left: -0.70em; }
+    75% { margin-top: 0.10em; margin-left: -1.88em; }
+    100% { margin-top: 0.10em; margin-left: -0.70em; }
 }
 .cores {
     animation: clichet 10s infinite;
@@ -368,8 +368,7 @@ main.a-project {
       overflow: hidden;
     }
     .show-small .subject {
-        height: 100vh;
-        max-height: 100vh;
+        height: calc(100vh - 106px);
         overflow: hidden;
         margin-bottom: 0;
         touch-action: pan-y;
@@ -403,12 +402,7 @@ main.a-project {
     }
     .show-small { height: auto; overflow: visible; }
     .too-much-text, .info { overflow: visible; height: auto; }
-    .show-small .subject {
-        height: 100vh;
-        max-height: 100vh;
-        overflow: hidden;
-        margin-bottom: 0;
-    }
+
     .show-small .project-carousel-container {
         height: 100%;
         max-height: 100%;
@@ -610,14 +604,41 @@ main.a-project {
     height: 100%;
 }
 @media only screen and (max-width: 575px) {
-    .index-portfolio .prev, .index-portfolio .next { position: absolute; }
+    .index-portfolio {
+        height: calc(100vh - 71px);
+        position: relative;
+        min-height: unset !important;
+    }
+    .index-portfolio .prev, .index-portfolio .next { 
+        position: absolute; 
+    }
     .index-portfolio .prev {
-        left: 0; bottom: 71px; height: 72px; font-size: 6rem; line-height: 0em; width: 72px; background-color: whitesmoke;
+        left: 0; 
+        bottom: 0; 
+        height: 72px; 
+        font-size: 6rem; 
+        line-height: 0em; 
+        width: 72px; 
+        background-color: whitesmoke;
     }
     .index-portfolio .next {
-        right: 0; bottom: 71px; height: 72px; font-size: 6rem; line-height: 0em; width: 72px; background-color: whitesmoke;
+        right: 0; 
+        bottom: 0; 
+        height: 72px; 
+        font-size: 6rem; 
+        line-height: 0em; 
+        width: 72px; 
+        background-color: whitesmoke;
     }
     .slick-list { width: 100%; }
+    .index-carousel-container, .index-carousel, 
+    .index-carousel .slick-list, .index-carousel .slick-track,
+    .index-carousel .slide { 
+        height: inherit; 
+    }
+    .index-carousel .slide { 
+        padding-top: 36px;
+    }
 }
 
 /* ===========================
@@ -795,6 +816,12 @@ footer {
 .dropdown-menu .dropdown-item { opacity: 0; transition: opacity 200ms ease; }
 .dropdown-menu.show .dropdown-item, .dropdown-menu.fading-out .dropdown-item { opacity: 1; }
 
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ===========================
    Show-large / Show-small containers
    =========================== */
@@ -809,7 +836,7 @@ footer {
 }
 
 .show-small .slick-track {
-    padding-top: 3rem;
+    padding-top: 36px;
 }
 /* Info columns */
 .info {
@@ -867,8 +894,17 @@ footer {
   object-fit: contain;
   display: block;
 }
-.show-large .a-project .slick-dots { bottom: 1rem; position: absolute; }
-.show-large .slide-description { margin-top: 1rem; text-align: center; }
+.show-large .a-project .slick-dots { 
+    bottom: 1rem; 
+    position: absolute; 
+}
+.show-large .slide-description { 
+    margin-top: 1rem;
+}
+
+.slide-description {
+    text-align: center;
+}
 
 .about_me .info { 
     height: 100vh; 
@@ -1037,7 +1073,9 @@ header:hover .carousel-header-short { opacity: 0; }
     background-color: rgb(16, 16, 16) !important;
     width: 1em !important; height: 1em !important;
 }
-.a-project .slick-dotted.slick- r{ margin-bottom: 0px !important; }
+.a-project .slick-dotted.slick-slider{ 
+    margin-bottom: 0px !important; 
+}
 
 /* Ensure videos use same sizing as images in slides (global) */
 .a-project .slide img,
@@ -1065,7 +1103,7 @@ header:hover .carousel-header-short { opacity: 0; }
 @media only screen and (max-width: 991px) {
   .show-small .slide img,
   .show-small .slide video {
-    max-height: 85%;
+    max-height: 80%;
   }
   .projects { 
     border-top: 1px solid rgb(16, 16, 16);
@@ -1108,13 +1146,10 @@ header:hover .carousel-header-short { opacity: 0; }
         max-height: 85%; 
     }
     .a-project .slick-dots { 
-        bottom: 144px; 
+        bottom: 16px; 
     }
     .a-project .slide { 
         padding-top: 2rem; height: 73vh; 
-    }
-    .playtime .project-carousel .slick-dots { 
-        bottom: -1em; 
     }
 }
 @media only screen and (max-width: 599px) { 
@@ -1178,7 +1213,7 @@ header:hover .carousel-header-short { opacity: 0; }
     text-align: center;
   }
 .show-large .slick-dots {
-    bottom: -3rem;
+    bottom: 10px;
   }
 
 /* .show-large .slick-dotted.slick-slider {
@@ -1305,7 +1340,8 @@ header:hover .carousel-header-short { opacity: 0; }
 /* Make sure Slick controls layout on the test page */
 .previous_work_test .project-carousel,
 .project-carousel-container .project-carousel {
-  display: block !important; /* override any flex/row on root */
+  display: block !important;
+  height: inherit;
 }
 
 /* Aniversário Atómico: match slide image sizing logic from ineur/sel */
