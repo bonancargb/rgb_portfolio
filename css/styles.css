@@ -604,6 +604,9 @@ main.a-project {
     height: 100%;
 }
 @media only screen and (max-width: 575px) {
+    .rgb {
+        margin-top: 2px !important;
+    }
     .index-portfolio {
         height: calc(100svh - 71px);
         position: relative;
@@ -613,7 +616,7 @@ main.a-project {
         position: absolute; 
     }
     .index-portfolio .prev {
-        left: 0; 
+        left: -1px; 
         top: calc(100% - 71px); 
         height: 72px; 
         font-size: 6rem; 
@@ -622,7 +625,7 @@ main.a-project {
         background-color: whitesmoke;
     }
     .index-portfolio .next {
-        right: 0; 
+        right: -1px; 
         top: calc(100% - 71px); 
         height: 72px; 
         font-size: 6rem; 
