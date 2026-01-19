@@ -306,13 +306,20 @@ header .header-big:hover .funny-in, header .expanded.funny-in { opacity: 1; }
     padding-left: 0.3em;
 }
 .menu-option a { white-space: nowrap; }
-.header-mobile .menu-option { transform: translateY(100vh); opacity: 1; }
+.header-mobile .menu-option { 
+    transform: translateY(100vh); 
+    opacity: 1; 
+}
 header .header-big:hover .menu-option, header .expanded.menu-option {
     transform: translateY(0);
     opacity: 1;
 }
-.menu-option a { font-size: 1.2rem !important; }
-.header-mobile .menu-option a { font-size: 2rem !important; }
+.menu-option a { 
+    font-size: 1.2rem !important; 
+}
+.header-mobile .menu-option a { 
+    font-size: 2rem !important; 
+}
 .list-styling {
     background-color: whitesmoke;
     border-top: 1px solid rgb(16, 16, 16);
@@ -1141,11 +1148,7 @@ header:hover .carousel-header-short { opacity: 0; }
     align-items: center;
 }
 @media only screen and (max-width: 991px) {
-    .anas .subject, .playtime .subject {
-        position: unset;
-        height: 90%;
-        margin-bottom: 10rem;
-    }
+
     .about_me .subject { margin-bottom: 35px; }
     .a-project .show-small .slick-track {
         max-height: 100vh;
@@ -1358,6 +1361,32 @@ header:hover .carousel-header-short { opacity: 0; }
 .project-carousel-container .project-carousel {
   display: block !important;
   height: inherit;
+}
+
+@media (max-width: 991px) {
+  html, body {
+    height: 100svh; /* accounts for mobile browser UI */
+  }
+
+  /* about and project info columns */
+  .show-small .info,
+  .copy {
+    /* ensure bottom space is visible above the Android bar */
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    /* avoid clipping margins by parent overflow */
+    margin-bottom: 0;
+  }
+
+  /* project carousel container (if it touches the bottom) */
+  .project-carousel-container {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    overflow: visible; /* allow captions/arrows to render beyond */
+  }
+
+  /* footer mobile area */
+  .footer-mobile {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 }
 
 /* Aniversário Atómico: match slide image sizing logic from ineur/sel */
