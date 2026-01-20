@@ -494,6 +494,11 @@ main.a-project {
     font-size: 2rem;
 }
 
+.title-tag-container {
+    height: 100%;
+    max-width: 80%;
+}
+
 /* ===========================
    Big color circles
    =========================== */
@@ -523,13 +528,24 @@ main.a-project {
 /* Red */
 .big-red { color: whitesmoke; /* override color for red */ }
 .big-red > img.bg-image {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; border-radius: inherit; filter: grayscale(100%);
-    z-index: 0; transition: transform 400ms ease; transform: scale(1);
+    position: absolute; 
+    inset: 0; 
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: inherit; 
+    filter: grayscale(100%);
+    z-index: 0; 
+    transition: transform 400ms ease; 
+    transform: scale(1);
 }
 .big-red:hover > img.bg-image { transform: scale(1.06); }
 .big-red::before {
-  content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  border-radius: 50%; 
+  pointer-events: none;
   background-image: radial-gradient(circle at 50% 50%,
     rgba(255, 0, 0, 0) var(--ring-inner),
     rgba(255, 0, 0, 0.1) calc(var(--ring-inner) + 4%),
@@ -538,21 +554,44 @@ main.a-project {
   transition: --ring-inner 400ms ease, --ring-outer 400ms ease;
 }
 .big-red::after {
-    content: ""; position: absolute; inset: 0; border-radius: inherit;
-    background: rgba(0, 0, 0, 0.65); pointer-events: none; z-index: 0;
+    content: ""; 
+    position: absolute; 
+    inset: 0; 
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.65); 
+    pointer-events: none; 
+    z-index: 0;
 }
-.big-red:hover::before { --ring-inner: 64.5%; --ring-outer: 69%; }
+.big-red:hover::before { 
+    --ring-inner: 64.5%; 
+    --ring-outer: 69%; 
+}
 
 /* Green */
-.big-green { color: whitesmoke; }
-.big-green > img.bg-image {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; border-radius: inherit; filter: grayscale(100%);
-    z-index: 0; transition: transform 400ms ease; transform: scale(1);
+.big-green { 
+    color: whitesmoke; 
 }
-.big-green:hover > img.bg-image { transform: scale(1.06); }
+.big-green > img.bg-image {
+    position: absolute; 
+    inset: 0; 
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: inherit; 
+    filter: grayscale(100%);
+    z-index: 0; 
+    transition: transform 400ms ease; 
+    transform: scale(1);
+}
+.big-green:hover > img.bg-image { 
+    transform: scale(1.06); 
+}
 .big-green::before {
-  content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  border-radius: 50%; 
+  pointer-events: none;
   background-image: radial-gradient(circle at 50% 50%,
     rgba(0,128,0, 0) var(--ring-inner),
     rgba(0,128,0, 0.1) calc(var(--ring-inner) + 4%),
@@ -561,21 +600,44 @@ main.a-project {
   transition: --ring-inner 400ms ease, --ring-outer 400ms ease;
 }
 .big-green::after {
-    content: ""; position: absolute; inset: 0; border-radius: inherit;
-    background: rgba(0, 0, 0, 0.65); pointer-events: none; z-index: 0;
+    content: ""; 
+    position: absolute; 
+    inset: 0; 
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.65); 
+    pointer-events: none; 
+    z-index: 0;
 }
-.big-green:hover::before { --ring-inner: 64.5%; --ring-outer: 69%; }
+.big-green:hover::before { 
+    --ring-inner: 64.5%; 
+    --ring-outer: 69%; 
+}
 
 /* Blue */
-.big-blue { color: whitesmoke; }
-.big-blue > img.bg-image {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; border-radius: inherit; filter: grayscale(100%);
-    z-index: 0; transition: transform 400ms ease; transform: scale(1);
+.big-blue { 
+    color: whitesmoke; 
 }
-.big-blue:hover > img.bg-image { transform: scale(1.06); }
+.big-blue > img.bg-image {
+    position: absolute; 
+    inset: 0; 
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: inherit; 
+    filter: grayscale(100%);
+    z-index: 0; 
+    transition: transform 400ms ease; 
+    transform: scale(1);
+}
+.big-blue:hover > img.bg-image { 
+    transform: scale(1.06); 
+}
 .big-blue::before {
-  content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  border-radius: 50%; 
+  pointer-events: none;
   background-image: radial-gradient(circle at 50% 50%,
     rgba(0,0,255, 0) var(--ring-inner),
     rgba(0,0,255, 0.1) calc(var(--ring-inner) + 4%),
@@ -584,20 +646,45 @@ main.a-project {
   transition: --ring-inner 400ms ease, --ring-outer 400ms ease;
 }
 .big-blue::after {
-    content: ""; position: absolute; inset: 0; border-radius: inherit;
-    background: rgba(0, 0, 0, 0.65); pointer-events: none; z-index: 0;
+    content: ""; 
+    position: absolute; 
+    inset: 0; 
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.65); 
+    pointer-events: none; 
+    z-index: 0;
 }
-.big-blue:hover::before { --ring-inner: 64.5%; --ring-outer: 69%; }
+.big-blue:hover::before { 
+    --ring-inner: 64.5%; 
+    --ring-outer: 69%; }
 
 /* Shared image layering */
 .bg-image {
     position: absolute; inset: 0; width: 100%; height: 100%;
     object-fit: cover; border-radius: inherit; filter: grayscale(100%); z-index: 0;
 }
-.big-red::before { z-index: 1; } .big-red > * { position: relative; z-index: 2; }
-.big-green::before { z-index: 1; } .big-green > * { position: relative; z-index: 2; }
-.big-blue::before { z-index: 1; } .big-blue > * { position: relative; z-index: 2; }
-@media only screen and (max-width: 991px) { .big-red, .big-green, .big-blue { height: auto; width: 100%; } }
+.big-red::before { 
+    z-index: 1; 
+} .big-red > * { 
+    position: relative; 
+    z-index: 2; 
+}
+.big-green::before { 
+    z-index: 1; 
+} 
+.big-green > * { 
+    position: relative; z-index: 2; 
+}
+.big-blue::before { 
+    z-index: 1; 
+} .big-blue > * { 
+    position: relative; z-index: 2; 
+}
+@media only screen and (max-width: 991px) { 
+    .big-red, .big-green, .big-blue { 
+        height: auto; width: 100%; 
+    } 
+}
 
 /* ===========================
    Slick arrows and lists
@@ -705,8 +792,8 @@ main.a-project {
     list-style: none; 
     font-weight: lighter; 
     position: absolute; 
-    margin-top: 25%;
     text-align: center;
+    bottom: 25%;
 }
 @media only screen and (max-width: 499px) { .tags { font-size: 0.8rem; } }
 footer {
@@ -1546,3 +1633,4 @@ html, body, main {
   /* light spacing under the dropdown so filtered items don’t appear mid-page */
   padding-top: 4px;
 }
+
