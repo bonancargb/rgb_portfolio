@@ -307,7 +307,7 @@ header .header-big:hover .funny-in, header .expanded.funny-in { opacity: 1; }
 }
 .menu-option a { white-space: nowrap; }
 .header-mobile .menu-option { 
-    transform: translateY(100vh); 
+    transform: translateY(100svh); 
     opacity: 1; 
 }
 header .header-big:hover .menu-option, header .expanded.menu-option {
@@ -325,7 +325,7 @@ header .header-big:hover .menu-option, header .expanded.menu-option {
     border-top: 1px solid rgb(16, 16, 16);
     border-bottom: 1px solid rgb(16, 16, 16);
     width: 100vw;
-    height: calc(100vh - 87px);
+    height: calc(100svh - 87px);
     position: absolute;
     top: 40px;
     right: -1px;
@@ -352,7 +352,7 @@ main.a-project {
 
 .thats-me {
     object-fit: contain;
-    height: 70vh;
+    height: 70svh;
 }
 
 @media only screen and (max-width: 991px) {
@@ -360,22 +360,22 @@ main.a-project {
       overflow: hidden !important;            
       position: fixed;             
       width: 100%;
-      height: 100vh;               
+      height: 100svh;               
     }
     main.a-project {
       position: static;            
       top: auto;
       bottom: auto;
-      height: 100vh;               
+      height: 100svh;               
       overflow: hidden;            
     }
     .show-small {
-      height: 100vh;
-      max-height: 100vh;
+      height: 100svh;
+      max-height: 100svh;
       overflow: hidden;
     }
     .show-small .subject {
-        height: calc(100vh - 106px);
+        height: 100svh;
         overflow: hidden;
         margin-bottom: 0;
         touch-action: pan-y;
@@ -392,8 +392,8 @@ main.a-project {
     }
     .show-small .info {
         overflow-y: auto;
-        height: calc(100vh - 106px);
-        max-height: calc(100vh - 106px);
+        height: calc(100svh - 106px);
+        max-height: calc(100svh - 106px);
         overscroll-behavior: contain;
     }
 }
@@ -407,8 +407,13 @@ main.a-project {
       height: auto;
       overflow: visible;
     }
-    .show-small { height: auto; overflow: visible; }
-    .too-much-text, .info { overflow: visible; height: auto; }
+    .show-small { 
+        height: auto; 
+        /* overflow: visible;  */
+    }
+    .too-much-text, .info { 
+        overflow: visible; 
+        height: auto; }
 
     .show-small .project-carousel-container {
         height: 100%;
@@ -424,14 +429,14 @@ main.a-project {
 /* Small subject container: define height so inner image constraints apply */
 @media only screen and (max-width: 991px) {
   .about_me .show-small .subject .container-fluid {
-    height: 73vh;              /* matches small slide height used on other pages */
+    height: 73svh;              /* matches small slide height used on other pages */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
   }
   .about_me .show-small .thats-me {
-    max-height: 75vh;           /* consistent with other small slides */
+    max-height: 75svh;           /* consistent with other small slides */
     width: auto;
     height: auto;
     object-fit: contain;       /* avoid cropping */
@@ -449,7 +454,7 @@ main.a-project {
    =========================== */
 .index-carousel-container {
     transition: 0.5s;
-    height: 100vh;
+    height: 100svh;
     border-bottom: 1px solid rgb(16, 16, 16);
 }
 .index-carousel .titulo {
@@ -466,7 +471,7 @@ main.a-project {
 @media only screen and (max-width: 699px) { .index-carousel .titulo { font-size: 3.4rem; } }
 @media only screen and (max-width: 499px) { .index-carousel .titulo { font-size: 2.4rem; } }
 .index-portfolio .slide {
-    height: 100vh;
+    height: 100svh;
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -590,7 +595,7 @@ main.a-project {
 .prev, .next{
     z-index: 980;
     font-family: anybody;
-    height: 100vh;
+    height: 100svh;
     border: 1px solid rgb(16, 16, 16);
     background-color: whitesmoke;
     font-size: 8rem;
@@ -852,12 +857,16 @@ footer {
     position: relative;
 }
 
+.previous_work .show-small {
+    align-content: start !important;
+}
+
 .show-small .slick-track {
     padding-top: 36px;
 }
 /* Info columns */
 .info {
-    height: calc(100vh - 106px);
+    height: calc(100svh - 106px);
     margin-top: 36px;
     overflow-y: scroll;
 }
@@ -871,7 +880,7 @@ footer {
 }
 .show-large .info.d-flex { align-items: flex-start; }
 .show-large .project-carousel-container {
-    height: calc(100vh - 108px);
+    height: calc(100svh - 108px);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -924,7 +933,7 @@ footer {
 }
 
 .about_me .info { 
-    height: 100vh; 
+    height: 100svh; 
 }
 .show-large .info { /* align-items: center; */ }
 .show-small .info {
@@ -973,7 +982,7 @@ footer {
     top: 0px;
     right: 50%;
     justify-content: center;
-    height: 100vh;
+    height: 100svh;
 }
 .hor-line {
     border-bottom: 1px solid rgb(16, 16, 16);
@@ -1003,7 +1012,7 @@ footer {
 }
 /* .anas .subject iframe, .playtime .subject iframe { aspect-ratio: 16/9; } */
 .show-large .slick-track, .show-small .slick-track {
-    display: flex !important; align-items: center !important; height: calc(100vh - 96px);
+    display: flex !important; align-items: center !important; height: calc(100svh - 96px);
 }
 
 
@@ -1072,8 +1081,12 @@ header:hover .carousel-header-short { opacity: 0; }
     object-fit: contain;
     display: block;
 }
-.slide-description { font-size: 1rem; }
-.a-project .prev, .a-project .next { border: transparent; height: unset; }
+.slide-description { 
+    font-size: 1rem; 
+}
+.a-project .prev, .a-project .next { 
+    border: transparent; height: unset; 
+}
 .a-project .slick-dots {
     bottom: 0;
     transition: all 0.5s;
@@ -1151,8 +1164,8 @@ header:hover .carousel-header-short { opacity: 0; }
 
     .about_me .subject { margin-bottom: 35px; }
     .a-project .show-small .slick-track {
-        max-height: 100vh;
-        margin-bottom: 7rem;
+        max-height: 100svh;
+        /* margin-bottom: 7rem; */
     }
 
     .too-much-text { 
@@ -1165,15 +1178,15 @@ header:hover .carousel-header-short { opacity: 0; }
         max-height: 85%; 
     }
     .a-project .slick-dots { 
-        bottom: 16px; 
+        bottom: 108px; 
     }
     .a-project .slide { 
-        padding-top: 2rem; height: 73vh; 
+        padding-top: 2rem; height: 73svh; 
     }
 }
 @media only screen and (max-width: 599px) { 
     .about_me .subject { 
-        margin-bottom: 72px !important; 
+        /* margin-bottom: 72px !important;  */
     } 
 }
 
@@ -1484,11 +1497,38 @@ header:hover .carousel-header-short { opacity: 0; }
   }
 }
 
-/* Previous Work: projects lists should only scroll vertically */
+/* Previous Work lists: only Y scrolling */
 .projects.show-small,
 .projects.show-large {
   overflow-x: hidden !important;
   overscroll-behavior-x: contain;
+  touch-action: pan-y;
+}
+
+/* Global: block horizontal scrolling */
+html, body, main {
+  overflow-x: hidden !important;
+}
+
+/* Containers: prevent horizontal scroll bleeding */
+.content-viewport,
+.previous_work,
+.projects,
+.show-small,
+.show-large,
+.project-carousel-container,
+.project-carousel,
+.slick-list,
+.slick-track {
+  overflow-x: hidden !important;
+}
+
+/* Previous Work lists: only Y scrolling */
+.projects.show-small,
+.projects.show-large {
+  overflow-x: hidden !important;
+  overscroll-behavior-x: contain;
+  touch-action: pan-y;
 }
 
 /* Add a bit of visual separation from the dropdown */
